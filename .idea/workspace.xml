@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fr_brouillard_oss_cssfx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/kordamp_ikonli_fontawesome5_pack.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/kordamp_ikonli_javafx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx_javafx_swing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx_javafx_web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="first commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +127,19 @@
       <option name="presentableId" value="Default" />
       <updated>1686754369607</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1686759154955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686759154955</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
