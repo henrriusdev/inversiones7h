@@ -50,9 +50,11 @@ import java.util.stream.Collectors;
 
 import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MainController implements Initializable {
-	private final Stage stage;
+	private Stage stage;
 	private double xOffset;
 	private double yOffset;
 	private final ToggleGroup toggleGroup;
@@ -84,8 +86,7 @@ public class MainController implements Initializable {
 	@FXML
 	private StackPane logoContainer;
 
-	public MainController(Stage stage) {
-		this.stage = stage;
+	public MainController() {
 		this.toggleGroup = new ToggleGroup();
 		ToggleButtonsUtil.addAlwaysOneSelectedSupport(toggleGroup);
 	}
@@ -156,5 +157,9 @@ public class MainController implements Initializable {
 		toggleNode.setToggleGroup(toggleGroup);
 		if (rotate != 0) wrapper.getIcon().setRotate(rotate);
 		return toggleNode;
+	}
+
+	public void setStage(Stage stage){
+		this.stage = stage;
 	}
 }

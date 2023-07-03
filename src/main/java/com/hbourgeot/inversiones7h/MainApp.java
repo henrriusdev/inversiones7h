@@ -29,15 +29,24 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
+@SpringBootApplication
 public class MainApp extends Application {
+	private ConfigurableApplicationContext context;
 
+	@Override
+	public void init() throws Exception{
+		SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApp.class);
+		context = builder.run(getParameters().getRaw().toArray(new String[0]));
+	}
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		CSSFX.start();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/Main.fxml"));
-		System.out.println(loader.getLocation());
-		loader.setControllerFactory(c -> new MainController(primaryStage));
+		loader.setControllerFactory(context::getBean);
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		MFXThemeManager.addOn(scene, Themes.DEFAULT, Themes.LEGACY);
@@ -47,7 +56,13 @@ public class MainApp extends Application {
 		primaryStage.setTitle("MaterialFX Demo");
 		primaryStage.show();
 
-		//ScenicView.show(scene);
+		MainController mainController = context.getBean(MainController.class);
+		mainController.setStage(primaryStage);
+	}
+
+	@Override
+	public void stop() throws Exception{
+		context.close();
 	}
 }
 
