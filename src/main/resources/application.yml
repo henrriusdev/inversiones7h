@@ -1,0 +1,17 @@
+spring:
+    datasource:
+        password: inversiones
+        url: jdbc:h2:file:./inversiones-data/database
+        username: sa
+        driver-class-name: org.h2.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+
+        show-sql: true
+    #main:
+    #    web-application-type: none
+    h2:
+        console:
+            enabled: true
+            path: /h2
