@@ -18,10 +18,10 @@
 
 package com.hbourgeot.inversiones7h;
 
+import com.hbourgeot.inversiones7h.controllers.LoginController;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
-import com.hbourgeot.inversiones7h.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -56,13 +56,17 @@ public class MainApp extends Application {
 		primaryStage.setTitle("MaterialFX Demo");
 		primaryStage.show();
 
-		MainController mainController = context.getBean(MainController.class);
+		LoginController mainController = context.getBean(LoginController.class);
 		mainController.setStage(primaryStage);
 	}
 
 	@Override
 	public void stop() throws Exception{
 		context.close();
+	}
+
+	public static void main(String []args){
+		Application.launch(args);
 	}
 }
 
