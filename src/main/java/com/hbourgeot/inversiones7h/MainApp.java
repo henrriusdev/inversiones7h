@@ -22,7 +22,7 @@ import com.hbourgeot.inversiones7h.controllers.LoginController;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
-import com.hbourgeot.inversiones7h.controllers.CajaController;
+import com.hbourgeot.inversiones7h.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
