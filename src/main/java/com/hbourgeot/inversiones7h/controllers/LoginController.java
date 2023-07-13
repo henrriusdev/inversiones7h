@@ -94,13 +94,19 @@ public class LoginController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
-		minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
-		alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-			boolean newVal = !stage.isAlwaysOnTop();
-			alwaysOnTopIcon.pseudoClassStateChanged(PseudoClass.getPseudoClass("always-on-top"), newVal);
-			stage.setAlwaysOnTop(newVal);
-		});
+		if (this.closeIcon != null) {
+			this.closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
+		}
+		if(this.minimizeIcon != null){
+			minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
+		}
+		if(this.alwaysOnTopIcon != null){
+			alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+				boolean newVal = !stage.isAlwaysOnTop();
+				alwaysOnTopIcon.pseudoClassStateChanged(PseudoClass.getPseudoClass("always-on-top"), newVal);
+				stage.setAlwaysOnTop(newVal);
+			});
+		}
 
 		windowHeader.setOnMousePressed(event -> {
 			xOffset = stage.getX() - event.getScreenX();
@@ -127,23 +133,25 @@ public class LoginController implements Initializable {
 
 	private void initializeLoader() {
 		MFXLoader loader = new MFXLoader();
+		loader.addView(MFXLoaderBean.of("LOGIN", loadURL("fxml/Login.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).get());
+		loader.addView(MFXLoaderBean.of("SOBRE", loadURL("fxml/Sobre.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Sobre nosotros")).get());
 		//loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("fxml/Buttons.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
 		//loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("fxml/ChecksRadiosToggles.fxml")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
 		//loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("fxml/FontResources.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
-		//loader.setOnLoadedAction(beans -> {
-		/*	List<ToggleButton> nodes = beans.stream()
-					.map(bean -> {
-						ToggleButton toggle = (ToggleButton) bean.getBeanToNodeMapper().get();
-						toggle.setOnAction(event -> contentPane.getChildren().setAll(bean.getRoot()));
-						if (bean.isDefaultView()) {
-							contentPane.getChildren().setAll(bean.getRoot());
-							toggle.setSelected(true);
-						}
-						return toggle;
-					}).collect(Collectors.toList());
+		loader.setOnLoadedAction(beans -> {
+			List<ToggleButton> nodes = beans.stream()
+						.map(bean -> {
+							ToggleButton toggle = (ToggleButton) bean.getBeanToNodeMapper().get();
+							toggle.setOnAction(event -> contentPane.getChildren().setAll(bean.getRoot()));
+							if (bean.isDefaultView()) {
+								contentPane.getChildren().setAll(bean.getRoot());
+								toggle.setSelected(true);
+							}
+							return toggle;
+						}).collect(Collectors.toList());
 			navBar.getChildren().setAll(nodes);
-		});*/
-		loader.start()
+		});
+		loader.start();
 	}
 
 	private ToggleButton createToggle(String icon, String text) {
