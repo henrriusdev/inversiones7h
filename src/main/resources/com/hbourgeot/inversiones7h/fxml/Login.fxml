@@ -1,25 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="537.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.LoginController">
+<AnchorPane prefHeight="666.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.LoginController">
    <children>
-      <VBox alignment="CENTER" layoutX="169.0" layoutY="109.0" prefHeight="414.0" prefWidth="540.0">
+      <VBox alignment="CENTER" layoutX="237.0" layoutY="164.0" prefHeight="314.0" prefWidth="549.0" style="-fx-spacing: 10;">
          <children>
-            <MFXTextField floatingText="Usuario" prefHeight="49.0" prefWidth="303.0" />
-            <MFXPasswordField floatingText="Contraseña" prefHeight="49.0" prefWidth="301.0" />
+            <Label contentDisplay="CENTER" prefHeight="49.0" prefWidth="109.0" text="Inicie sesión">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3119700253009796" green="0.16502192616462708" blue="0.5657894611358643" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.651199996471405" green="0.14079999923706055" blue="0.8799999952316284" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MFXTextField fx:id="userNameField" floatingText="Usuario" prefHeight="49.0" prefWidth="303.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXPasswordField fx:id="passwordField" floatingText="Contraseña" prefHeight="49.0" prefWidth="301.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXPasswordField>
+            <MFXButton depthLevel="LEVEL5" prefHeight="44.0" prefWidth="297.0" rippleColor="#664d80" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Iniciar sesion" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </MFXButton>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </VBox>
-      <Label layoutX="231.0" layoutY="47.0" prefHeight="26.0" prefWidth="416.0" text="Bienvenido al sistema de Inversiones 7H" textAlignment="CENTER">
+      <Label layoutX="114.0" layoutY="54.0" prefHeight="49.0" prefWidth="795.0" text="Bienvenido al sistema de Inversiones 7H" textAlignment="CENTER">
          <font>
-            <Font name="SansSerif Regular" size="22.0" />
+            <Font name="SansSerif Regular" size="43.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3119700253009796" green="0.16502192616462708" blue="0.5657894611358643" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.651199996471405" green="0.14079999923706055" blue="0.8799999952316284" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
    </children>
 </AnchorPane>

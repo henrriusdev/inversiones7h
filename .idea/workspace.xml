@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JavaF.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" beforeDir="false" />
+    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="cambiados controllers">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ChecksRadiosToggleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/FontResourcesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Buttons.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/ChecksRadiosToggles.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/FontResources.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CajaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CajaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SupervisorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Caja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Caja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/LoginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Sobre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Sobre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Supervisor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Supervisor.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +27,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
@@ -202,6 +201,7 @@
       <workItem from="1689121364902" duration="729000" />
       <workItem from="1689158810655" duration="428000" />
       <workItem from="1689160687042" duration="5864000" />
+      <workItem from="1689243388779" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1686759154955</created>
@@ -215,6 +215,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />

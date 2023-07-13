@@ -1,27 +1,6 @@
-/*
-/*
- * Copyright (C) 2022 Parisi Alessandro
- * This file is part of MaterialFX (https://github.com/palexdev/MaterialFX).
- *
- * MaterialFX is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * MaterialFX is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with MaterialFX.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package com.hbourgeot.inversiones7h.controllers;
 
-import io.github.palexdev.materialfx.controls.MFXIconWrapper;
-import io.github.palexdev.materialfx.controls.MFXRectangleToggleNode;
-import io.github.palexdev.materialfx.controls.MFXScrollPane;
+import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
 import io.github.palexdev.materialfx.utils.others.loader.MFXLoader;
@@ -54,7 +33,7 @@ import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoginController implements Initializable {
+public class LoginViewController implements Initializable {
 	private Stage stage;
 	private double xOffset;
 	private double yOffset;
@@ -87,35 +66,29 @@ public class LoginController implements Initializable {
 	@FXML
 	private StackPane logoContainer;
 
-	public LoginController() {
+	public LoginViewController() {
 		this.toggleGroup = new ToggleGroup();
 		ToggleButtonsUtil.addAlwaysOneSelectedSupport(toggleGroup);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		if (this.closeIcon != null) {
-			this.closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
-		}
-		if(this.minimizeIcon != null){
-			minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
-		}
-		if(this.alwaysOnTopIcon != null){
-			alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+		this.closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
+		minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
+		alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
 				boolean newVal = !stage.isAlwaysOnTop();
 				alwaysOnTopIcon.pseudoClassStateChanged(PseudoClass.getPseudoClass("always-on-top"), newVal);
 				stage.setAlwaysOnTop(newVal);
 			});
-		}
 
-		windowHeader.setOnMousePressed(event -> {
-			xOffset = stage.getX() - event.getScreenX();
-			yOffset = stage.getY() - event.getScreenY();
-		});
-		windowHeader.setOnMouseDragged(event -> {
-			stage.setX(event.getScreenX() + xOffset);
-			stage.setY(event.getScreenY() + yOffset);
-		});
+			windowHeader.setOnMousePressed(event -> {
+				xOffset = stage.getX() - event.getScreenX();
+				yOffset = stage.getY() - event.getScreenY();
+			});
+			windowHeader.setOnMouseDragged(event -> {
+				stage.setX(event.getScreenX() + xOffset);
+				stage.setY(event.getScreenY() + yOffset);
+			});
 
 		initializeLoader();
 

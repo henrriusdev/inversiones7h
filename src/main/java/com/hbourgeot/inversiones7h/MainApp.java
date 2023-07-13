@@ -1,28 +1,10 @@
-/*
- * Copyright (C) 2022 Parisi Alessandro
- * This file is part of MaterialFX (https://github.com/palexdev/MaterialFX).
- *
- * MaterialFX is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * MaterialFX is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with MaterialFX.  If not, see <http://www.gnu.org/licenses/>.
- */
 
 package com.hbourgeot.inversiones7h;
 
-import com.hbourgeot.inversiones7h.controllers.LoginController;
+import com.hbourgeot.inversiones7h.controllers.LoginViewController;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
-import com.hbourgeot.inversiones7h.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -57,13 +39,17 @@ public class MainApp extends Application {
 		primaryStage.setTitle("MaterialFX Demo");
 		primaryStage.show();
 
-		LoginController mainController = context.getBean(LoginController.class);
+		LoginViewController mainController = context.getBean(LoginViewController.class);
 		mainController.setStage(primaryStage);
 	}
 
 	@Override
 	public void stop() throws Exception{
 		context.close();
+	}
+
+	public static void main(String[] args) {
+		launch(args);
 	}
 }
 
