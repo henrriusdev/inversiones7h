@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="537.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.LoginController">
+   <children>
+      <VBox alignment="CENTER" layoutX="169.0" layoutY="109.0" prefHeight="414.0" prefWidth="540.0">
+         <children>
+            <MFXTextField floatingText="Usuario" prefHeight="49.0" prefWidth="303.0" />
+            <MFXPasswordField floatingText="Contraseña" prefHeight="49.0" prefWidth="301.0" />
+         </children>
+      </VBox>
+      <Label layoutX="231.0" layoutY="47.0" prefHeight="26.0" prefWidth="416.0" text="Bienvenido al sistema de Inversiones 7H" textAlignment="CENTER">
+         <font>
+            <Font name="SansSerif Regular" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
