@@ -106,7 +106,7 @@ public class LoginViewController implements Initializable {
 
 	private void initializeLoader() {
 		MFXLoader loader = new MFXLoader();
-		loader.addView(MFXLoaderBean.of("LOGIN", loadURL("fxml/Login.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).get());
+		loader.addView(MFXLoaderBean.of("LOGIN", loadURL("fxml/Login.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).setDefaultRoot(true).get());
 		loader.addView(MFXLoaderBean.of("SOBRE", loadURL("fxml/Sobre.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Sobre nosotros")).get());
 		//loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("fxml/Buttons.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
 		//loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("fxml/ChecksRadiosToggles.fxml")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
