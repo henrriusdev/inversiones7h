@@ -1,55 +1,64 @@
 
 package com.hbourgeot.inversiones7h;
 
+import com.hbourgeot.inversiones7h.controllers.LoginController;
 import com.hbourgeot.inversiones7h.controllers.LoginViewController;
+import com.hbourgeot.inversiones7h.utils.Screens;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import net.rgielen.fxweaver.core.FxWeaver;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication
 public class MainApp extends Application {
 	private ConfigurableApplicationContext context;
 
 	@Override
 	public void init() throws Exception{
-		SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApp.class);
-		context = builder.run(getParameters().getRaw().toArray(new String[0]));
+		String[] args = getParameters().getRaw().toArray(new String[0]);
+
+		this.context = new SpringApplicationBuilder().sources(SpringApp.class).run(args);
+
+		this.context
+			.getAutowireCapableBeanFactory()
+			.autowireBeanProperties(
+				this,
+				AutowireCapableBeanFactory.AUTOWIRE_BY_TYPE,
+				true
+			);
 	}
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage stage) throws Exception {
+		FxWeaver fxWeaver = context.getBean(FxWeaver.class);
+		Parent root = fxWeaver.loadView(LoginViewController.class);
 		CSSFX.start();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/LoginView.fxml"));
-		loader.setControllerFactory(context::getBean);
-		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		MFXThemeManager.addOn(scene, Themes.DEFAULT, Themes.LEGACY);
 		scene.setFill(Color.TRANSPARENT);
-		primaryStage.initStyle(StageStyle.TRANSPARENT);
-		primaryStage.setScene(scene);
-		primaryStage.setTitle("MaterialFX Demo");
-		primaryStage.show();
+		stage.initStyle(StageStyle.TRANSPARENT);
+		stage.setTitle("Inversiones7H");
+		stage.setScene(scene);
+		stage.show();
 
-		LoginViewController mainController = context.getBean(LoginViewController.class);
-		mainController.setStage(primaryStage);
+		LoginViewController loginViewController = context.getBean(LoginViewController.class);
+		loginViewController.setStage(stage);
 	}
 
 	@Override
-	public void stop() throws Exception{
+	public void stop() throws Exception {
 		context.close();
-	}
-
-	public static void main(String[] args) {
-		launch(args);
+		Platform.exit();
 	}
 }
 

@@ -32,9 +32,11 @@ import java.util.stream.Collectors;
 
 import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
+import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
 
 @Component
+@FxmlView("Caja.fxml")
 public class CajaController implements Initializable {
 	private Stage stage;
 	private double xOffset;
@@ -108,9 +110,9 @@ public class CajaController implements Initializable {
 
 	private void initializeLoader() {
 		MFXLoader loader = new MFXLoader();
-		/*loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("fxml/Buttons.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
-		loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("fxml/ChecksRadiosToggles.fxml")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
-		loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("fxml/FontResources.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
+		/*loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("controllers/Buttons.controllers")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
+		loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("controllers/ChecksRadiosToggles.controllers")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
+		loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("controllers/FontResources.controllers")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
 		loader.setOnLoadedAction(beans -> {
 			List<ToggleButton> nodes = beans.stream()
 					.map(bean -> {
@@ -143,5 +145,13 @@ public class CajaController implements Initializable {
 
 	public void setStage(Stage stage){
 		this.stage = stage;
+	}
+
+	public void ocultar() {
+		rootPane.setVisible(false);
+	}
+
+	public void mostrar() {
+		rootPane.setVisible(true);
 	}
 }

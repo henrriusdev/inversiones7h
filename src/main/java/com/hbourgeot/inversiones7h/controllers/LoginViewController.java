@@ -1,5 +1,7 @@
 package com.hbourgeot.inversiones7h.controllers;
 
+import com.hbourgeot.inversiones7h.BootInitializable;
+import com.hbourgeot.inversiones7h.utils.Screens;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
@@ -9,8 +11,11 @@ import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -30,10 +35,17 @@ import java.util.stream.Collectors;
 
 import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
+import net.rgielen.fxweaver.core.FxControllerAndView;
+import net.rgielen.fxweaver.core.FxWeaver;
+import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoginViewController implements Initializable {
+@FxmlView("LoginView.fxml")
+public class LoginViewController implements BootInitializable {
 	private Stage stage;
 	private double xOffset;
 	private double yOffset;
@@ -66,6 +78,11 @@ public class LoginViewController implements Initializable {
 	@FXML
 	private StackPane logoContainer;
 
+	@Autowired
+	private FxWeaver fxWeaver;
+
+	private ApplicationContext applicationContext;
+
 	public LoginViewController() {
 		this.toggleGroup = new ToggleGroup();
 		ToggleButtonsUtil.addAlwaysOneSelectedSupport(toggleGroup);
@@ -73,6 +90,7 @@ public class LoginViewController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
 		this.closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
 		minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
 		alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -105,12 +123,26 @@ public class LoginViewController implements Initializable {
 	}
 
 	private void initializeLoader() {
-		MFXLoader loader = new MFXLoader();
-		loader.addView(MFXLoaderBean.of("LOGIN", loadURL("fxml/Login.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).setDefaultRoot(true).get());
-		loader.addView(MFXLoaderBean.of("SOBRE", loadURL("fxml/Sobre.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Sobre nosotros")).get());
-		//loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("fxml/Buttons.fxml")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
-		//loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("fxml/ChecksRadiosToggles.fxml")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
-		//loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("fxml/FontResources.fxml")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
+		Parent loginController = fxWeaver.loadView(LoginController.class);
+		Parent sobreController = fxWeaver.loadView(SobreController.class);
+
+		ToggleButton loginBtn = createToggle("fas-circle-dot", "Inicio de sesion");
+		ToggleButton sobreBtn = createToggle("fas-icons", "Sobre nosotros");
+
+		loginBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(loginController);
+		});
+
+		sobreBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(sobreController);
+		});
+
+		navBar.getChildren().add(loginBtn);
+		navBar.getChildren().add(sobreBtn);
+
+		contentPane.getChildren().setAll(loginController);
+		/*loader.addView(MFXLoaderBean.of("LOGIN", loadURL(Screens.Login)).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).setDefaultRoot(true).get());
+		loader.addView(MFXLoaderBean.of("SOBRE", loadURL(Screens.Sobre)).setBeanToNodeMapper(() -> createToggle("fas-icons", "Sobre nosotros")).get());
 		loader.setOnLoadedAction(beans -> {
 			List<ToggleButton> nodes = beans.stream()
 						.map(bean -> {
@@ -124,7 +156,7 @@ public class LoginViewController implements Initializable {
 						}).collect(Collectors.toList());
 			navBar.getChildren().setAll(nodes);
 		});
-		loader.start();
+		loader.start();*/
 	}
 
 	private ToggleButton createToggle(String icon, String text) {
@@ -143,5 +175,30 @@ public class LoginViewController implements Initializable {
 
 	public void setStage(Stage stage){
 		this.stage = stage;
+	}
+
+	@Override
+	public void initConstruct() {
+
+	}
+
+	@Override
+	public void stage(Stage primaryStage) {
+
+	}
+
+	@Override
+	public Node initView() {
+		return null;
+	}
+
+	@Override
+	public void initValidator() {
+
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		this.applicationContext = applicationContext;
 	}
 }

@@ -45,7 +45,7 @@
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXPasswordField>
-            <MFXButton depthLevel="LEVEL5" prefHeight="44.0" prefWidth="297.0" rippleColor="#664d80" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Iniciar sesion" textAlignment="CENTER" textFill="WHITE">
+            <MFXButton fx:id="loginBtn" depthLevel="LEVEL5" onAction="#iniciarSesion" prefHeight="44.0" prefWidth="297.0" rippleColor="#664d80" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Iniciar sesion" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
