@@ -27,6 +27,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -53,6 +55,9 @@ public class LoginController implements BootInitializable {
 
   @FXML
   public void iniciarSesion(ActionEvent event) {
+    Date fecha=new Date();
+    SimpleDateFormat formatoFecha =new SimpleDateFormat("dd/MM/YYYY");
+
     String usuario = userNameField.getText();
     String clave = passwordField.getText();
 
@@ -62,7 +67,8 @@ public class LoginController implements BootInitializable {
     }
 
     User usuarioEncontrado = uService.findById(usuario);
-    System.out.println("Clave correcta: " + BCrypt.checkpw(clave, usuarioEncontrado.getClave()));
+    usuarioEncontrado.setFechaIngreso(formatoFecha.format(fecha));
+
     if (!BCrypt.checkpw(clave, usuarioEncontrado.getClave())) {
       mostrarAlerta("Oh no!", "Los datos ingresados puede que sean erróneos, se recomienda revisarlos y probar nuevamente");
       return;

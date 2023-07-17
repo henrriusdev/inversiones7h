@@ -32,6 +32,18 @@ public class User implements Serializable { // implementamos una interfaz
   @Column(nullable = false)
   private Rol rol;
 
+  @Temporal(TemporalType.DATE)
+  @Column(name = "fecha_ingreso")
+  private String fechaIngreso;
+
+  public String getFechaIngreso() {
+    return fechaIngreso;
+  }
+
+  public void setFechaIngreso(String fechaIngreso) {
+    this.fechaIngreso = fechaIngreso;
+  }
+
   public Rol getRol() {
     return rol;
   }

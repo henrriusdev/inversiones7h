@@ -5,8 +5,6 @@ import io.github.palexdev.materialfx.controls.MFXRectangleToggleNode;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoader;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoaderBean;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
@@ -26,11 +24,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-
-import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
@@ -109,24 +103,6 @@ public class SupervisorController implements Initializable {
 	}
 
 	private void initializeLoader() {
-		MFXLoader loader = new MFXLoader();
-		/*loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("controllers/Buttons.controllers")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
-		loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("controllers/ChecksRadiosToggles.controllers")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
-		loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("controllers/FontResources.controllers")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
-		loader.setOnLoadedAction(beans -> {
-			List<ToggleButton> nodes = beans.stream()
-					.map(bean -> {
-						ToggleButton toggle = (ToggleButton) bean.getBeanToNodeMapper().get();
-						toggle.setOnAction(event -> contentPane.getChildren().setAll(bean.getRoot()));
-						if (bean.isDefaultView()) {
-							contentPane.getChildren().setAll(bean.getRoot());
-							toggle.setSelected(true);
-						}
-						return toggle;
-					}).collect(Collectors.toList());
-			navBar.getChildren().setAll(nodes);
-		});*/
-		loader.start();
 	}
 
 	private ToggleButton createToggle(String icon, String text) {

@@ -1,18 +1,13 @@
 package com.hbourgeot.inversiones7h.controllers;
 
 import com.hbourgeot.inversiones7h.BootInitializable;
-import com.hbourgeot.inversiones7h.utils.Screens;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoader;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoaderBean;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -29,13 +24,9 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
-import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
-import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.BeansException;
@@ -141,22 +132,6 @@ public class LoginViewController implements BootInitializable {
 		navBar.getChildren().add(sobreBtn);
 
 		contentPane.getChildren().setAll(loginController);
-		/*loader.addView(MFXLoaderBean.of("LOGIN", loadURL(Screens.Login)).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Inicio de sesion")).setDefaultRoot(true).get());
-		loader.addView(MFXLoaderBean.of("SOBRE", loadURL(Screens.Sobre)).setBeanToNodeMapper(() -> createToggle("fas-icons", "Sobre nosotros")).get());
-		loader.setOnLoadedAction(beans -> {
-			List<ToggleButton> nodes = beans.stream()
-						.map(bean -> {
-							ToggleButton toggle = (ToggleButton) bean.getBeanToNodeMapper().get();
-							toggle.setOnAction(event -> contentPane.getChildren().setAll(bean.getRoot()));
-							if (bean.isDefaultView()) {
-								contentPane.getChildren().setAll(bean.getRoot());
-								toggle.setSelected(true);
-							}
-							return toggle;
-						}).collect(Collectors.toList());
-			navBar.getChildren().setAll(nodes);
-		});
-		loader.start();*/
 	}
 
 	private ToggleButton createToggle(String icon, String text) {
