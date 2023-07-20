@@ -122,7 +122,7 @@
                 <configuration>
                     <mainClass>com.hbourgeot.inversiones7h.MainApp</mainClass>
                     <jvmArguments>
-                        --module-path C:\Users\Admin\Downloads\openjfx-20.0.1_windows-x64_bin-sdk\javafx-sdk-20.0.1\lib --add-modules javafx.controls,javafx.fxml
+                        --module-path C:\Users\elibe\Desktop\javaFX\openjfx-17.0.7_windows-x64_bin-sdk\javafx-sdk-17.0.7\lib --add-modules javafx.controls,javafx.fxml
                     </jvmArguments>
                 </configuration>
             </plugin>
