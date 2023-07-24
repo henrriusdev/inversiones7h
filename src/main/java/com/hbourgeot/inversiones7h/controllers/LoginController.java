@@ -4,9 +4,12 @@ import com.hbourgeot.inversiones7h.BootInitializable;
 import com.hbourgeot.inversiones7h.entities.User;
 import com.hbourgeot.inversiones7h.services.IUserService;
 import com.hbourgeot.inversiones7h.utils.Screens;
+import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
+import io.github.palexdev.materialfx.css.themes.Themes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -79,13 +82,21 @@ public class LoginController implements BootInitializable {
     if (usuarioEncontrado.getRol().equals(User.Rol.ADMIN)) {
       root = fxWeaver.loadView(SupervisorController.class);
       stage.setTitle("Panel del Supervisor - Inversiones7H");
+
+      SupervisorController supervisorController = springContext.getBean(SupervisorController.class);
+      supervisorController.setStage(stage);
     } else {
       root = fxWeaver.loadView(CajaController.class);
       stage.setTitle("Panel del Cajero - Inversiones7H");
+
+      CajaController cajaController = springContext.getBean(CajaController.class);
+      cajaController.setStage(stage);
     }
 
     try {
+      CSSFX.start();
       Scene scene = new Scene(root);
+      MFXThemeManager.addOn(scene, Themes.DEFAULT, Themes.LEGACY);
       scene.setFill(Color.TRANSPARENT);
       stage.setScene(scene);
       stage.initStyle(StageStyle.TRANSPARENT);

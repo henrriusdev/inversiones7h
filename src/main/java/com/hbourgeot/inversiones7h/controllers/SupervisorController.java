@@ -11,6 +11,7 @@ import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -26,7 +27,9 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
+import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -63,6 +66,9 @@ public class SupervisorController implements Initializable {
 
 	@FXML
 	private StackPane logoContainer;
+
+	@Autowired
+	private FxWeaver fxWeaver;
 
 	public SupervisorController() {
 		this.toggleGroup = new ToggleGroup();
@@ -103,6 +109,24 @@ public class SupervisorController implements Initializable {
 	}
 
 	private void initializeLoader() {
+		Parent compraController = fxWeaver.loadView(CompraController.class);
+		Parent productosController = fxWeaver.loadView(ProductosController.class);
+
+		ToggleButton compraBtn = createToggle("fas-circle-dot", "Generar Compra");
+		ToggleButton productosBtn = createToggle("fas-icons", "Agregar Producto");
+
+		compraBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(compraController);
+		});
+
+		productosBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(productosController);
+		});
+
+		navBar.getChildren().add(compraBtn);
+		navBar.getChildren().add(productosBtn);
+
+		contentPane.getChildren().setAll(productosController);
 	}
 
 	private ToggleButton createToggle(String icon, String text) {
