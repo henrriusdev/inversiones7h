@@ -1,12 +1,12 @@
 package com.hbourgeot.inversiones7h.controllers;
 
+import com.hbourgeot.inversiones7h.MainApp;
 import io.github.palexdev.materialfx.controls.MFXIconWrapper;
 import io.github.palexdev.materialfx.controls.MFXRectangleToggleNode;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
 import io.github.palexdev.materialfx.utils.others.loader.MFXLoader;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoaderBean;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
@@ -26,12 +26,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-
-import static com.hbourgeot.inversiones7h.MaterialJavaResourceLoader.loadURL;
-import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Component;
 
@@ -99,7 +94,7 @@ public class CajaController implements Initializable {
 		ScrollUtils.addSmoothScrolling(scrollPane);
 
 		// The only way to get a fucking smooth image in this shitty framework
-		Image image = new Image(MaterialJavaResourceLoader.load("logo_alt.png"), 64, 64, true, true);
+		Image image = new Image(MainApp.class.getResourceAsStream("logo_alt.png"), 64, 64, true, true);
 		ImageView logo = new ImageView(image);
 		Circle clip = new Circle(30);
 		clip.centerXProperty().set(logo.layoutBoundsProperty().get().getCenterX());
@@ -145,13 +140,5 @@ public class CajaController implements Initializable {
 
 	public void setStage(Stage stage){
 		this.stage = stage;
-	}
-
-	public void ocultar() {
-		rootPane.setVisible(false);
-	}
-
-	public void mostrar() {
-		rootPane.setVisible(true);
 	}
 }

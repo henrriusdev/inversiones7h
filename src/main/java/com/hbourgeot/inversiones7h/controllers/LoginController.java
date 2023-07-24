@@ -1,9 +1,9 @@
 package com.hbourgeot.inversiones7h.controllers;
 
 import com.hbourgeot.inversiones7h.BootInitializable;
+import com.hbourgeot.inversiones7h.MainApp;
 import com.hbourgeot.inversiones7h.entities.User;
 import com.hbourgeot.inversiones7h.services.IUserService;
-import com.hbourgeot.inversiones7h.utils.Screens;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -59,7 +60,7 @@ public class LoginController implements BootInitializable {
   @FXML
   public void iniciarSesion(ActionEvent event) {
     Date fecha=new Date();
-    SimpleDateFormat formatoFecha =new SimpleDateFormat("dd/MM/YYYY");
+    SimpleDateFormat formatoFecha =new SimpleDateFormat("dd/MM/yyyy");
 
     String usuario = userNameField.getText();
     String clave = passwordField.getText();
@@ -100,6 +101,7 @@ public class LoginController implements BootInitializable {
       scene.setFill(Color.TRANSPARENT);
       stage.setScene(scene);
       stage.initStyle(StageStyle.TRANSPARENT);
+      stage.getIcons().add(new Image(MainApp.class.getResourceAsStream("logo.png")));
       stage.show();
     } catch (Exception exception) {
       System.out.println(exception.getLocalizedMessage());
@@ -134,16 +136,7 @@ public class LoginController implements BootInitializable {
 
   @Override
   public Node initView() {
-    try {
-      FXMLLoader loader = new FXMLLoader();
-      loader.setLocation(getClass().getResource(Screens.Login));
-      loader.setController(LoginController.class);
-      return loader.load();
-    } catch (IOException e){
-      System.err.println("can't load");
-      e.printStackTrace();
-      return null;
-    }
+    return null;
   }
 
   @Override

@@ -1,6 +1,7 @@
 package com.hbourgeot.inversiones7h.controllers;
 
 import com.hbourgeot.inversiones7h.BootInitializable;
+import com.hbourgeot.inversiones7h.MainApp;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
@@ -26,7 +27,6 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.hbourgeot.inversiones7h.MaterialJavaResourceLoader;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.BeansException;
@@ -104,7 +104,7 @@ public class LoginViewController implements BootInitializable {
 		ScrollUtils.addSmoothScrolling(scrollPane);
 
 		// The only way to get a fucking smooth image in this shitty framework
-		Image image = new Image(MaterialJavaResourceLoader.load("logo_alt.png"), 64, 64, true, true);
+		Image image = new Image(MainApp.class.getResourceAsStream("logo_alt.png"), 64, 64, true, true);
 		ImageView logo = new ImageView(image);
 		Circle clip = new Circle(30);
 		clip.centerXProperty().set(logo.layoutBoundsProperty().get().getCenterX());
