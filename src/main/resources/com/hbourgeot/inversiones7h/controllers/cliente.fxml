@@ -233,12 +233,12 @@
                   <Image url="@../../../../../../../../../../Pictures/pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" />
                </image>
             </ImageView>
-            <MFXButton layoutX="187.0" layoutY="374.0" prefHeight="49.0" prefWidth="130.0" text="Registrar">
+            <MFXButton layoutX="195.0" layoutY="374.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar">
                <font>
                   <Font size="18.0" />
                </font>
             </MFXButton>
-            <MFXButton layoutX="369.0" layoutY="374.0" prefHeight="49.0" prefWidth="130.0" text="Limpiar" />
+            <MFXButton layoutX="442.0" layoutY="374.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
          </children>
       </Pane>
    </children>

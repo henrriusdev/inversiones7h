@@ -16,8 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="449.0" layoutY="50.0" text="Registro de productos">
          <font>
@@ -174,10 +173,22 @@
                   </LinearGradient>
                </textFill>
             </SplitMenuButton>
-            <MFXTextField layoutX="204.0" layoutY="52.0" prefHeight="49.0" prefWidth="118.0" />
-            <MFXTextField layoutX="204.0" layoutY="125.0" prefHeight="49.0" prefWidth="118.0" />
-            <MFXTextField layoutX="204.0" layoutY="228.0" prefHeight="49.0" prefWidth="118.0" />
-            <MFXTextField layoutX="732.0" layoutY="51.0" prefHeight="49.0" prefWidth="118.0" />
+            <MFXTextField layoutX="204.0" layoutY="52.0" prefHeight="49.0" prefWidth="118.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="204.0" layoutY="125.0" prefHeight="49.0" prefWidth="118.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="204.0" layoutY="228.0" prefHeight="49.0" prefWidth="118.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="732.0" layoutY="51.0" prefHeight="49.0" prefWidth="118.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
             <Label layoutX="553.0" layoutY="136.0" text="Cantidad Vendida:">
                <font>
                   <Font size="18.0" />
@@ -205,12 +216,12 @@
                   <Image url="@../../../../../../../../../../Pictures/5166410%20(1).png" />
                </image>
             </ImageView>
-            <MFXButton layoutX="322.0" layoutY="383.0" prefHeight="49.0" prefWidth="146.0" text="Registrar">
+            <MFXButton layoutX="322.0" layoutY="383.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar">
                <font>
                   <Font size="18.0" />
                </font>
             </MFXButton>
-            <MFXButton layoutX="609.0" layoutY="384.0" prefHeight="46.0" prefWidth="137.0" text="Volver atras">
+            <MFXButton layoutX="609.0" layoutY="384.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al incio">
                <font>
                   <Font size="18.0" />
                </font>
