@@ -132,8 +132,8 @@ public class SupervisorController implements BootInitializable { // implementamo
 		Parent productosController = fxWeaver.loadView(ProductosController.class); //cargamos vista
 
 		// botones
-		ToggleButton compraBtn = createToggle("fas-circle-dot", "Generar Compra");
-		ToggleButton productosBtn = createToggle("fas-icons", "Agregar Producto");
+		ToggleButton compraBtn = createToggle("fas-cart-shopping", "Generar Compra");
+		ToggleButton productosBtn = createToggle("fas-box", "Agregar Producto");
 
 		// eventos
 		compraBtn.setOnAction(event -> {
