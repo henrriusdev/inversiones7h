@@ -119,8 +119,8 @@ public class CajaController implements BootInitializable {
 		Parent clienteController = fxWeaver.loadView(ClienteController.class); //cargamos vista
 
 		// botones
-		ToggleButton ventaBtn = createToggle("fas-circle-dot", "Generar Venta");
-		ToggleButton clienteBtn = createToggle("fas-icons", "Agregar Cliente");
+		ToggleButton ventaBtn = createToggle("fas-shop", "Generar Venta");
+		ToggleButton clienteBtn = createToggle("fas-user-group", "Agregar Cliente");
 
 		// eventos
 		ventaBtn.setOnAction(event -> {

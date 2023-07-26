@@ -73,6 +73,7 @@ public class LoginController implements BootInitializable {
     User usuarioEncontrado = uService.findById(usuario);
     usuarioEncontrado.setFechaIngreso(formatoFecha.format(fecha));
 
+
     if (!BCrypt.checkpw(clave, usuarioEncontrado.getClave())) {
       mostrarAlerta("Oh no!", "Los datos ingresados puede que sean erróneos, se recomienda revisarlos y probar nuevamente");
       return;

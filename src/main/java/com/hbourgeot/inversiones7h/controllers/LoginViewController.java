@@ -117,8 +117,8 @@ public class LoginViewController implements BootInitializable {
 		Parent loginController = fxWeaver.loadView(LoginController.class);
 		Parent sobreController = fxWeaver.loadView(SobreController.class);
 
-		ToggleButton loginBtn = createToggle("fas-circle-dot", "Inicio de sesion");
-		ToggleButton sobreBtn = createToggle("fas-icons", "Sobre nosotros");
+		ToggleButton loginBtn = createToggle("fas-key", "Inicio de sesion");
+		ToggleButton sobreBtn = createToggle("fas-circle-info", "Sobre nosotros");
 
 		loginBtn.setOnAction(event -> {
 			contentPane.getChildren().setAll(loginController);
