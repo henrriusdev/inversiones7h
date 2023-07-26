@@ -1,23 +1,20 @@
 
 package com.hbourgeot.inversiones7h;
 
-import com.hbourgeot.inversiones7h.controllers.LoginController;
 import com.hbourgeot.inversiones7h.controllers.LoginViewController;
-import com.hbourgeot.inversiones7h.utils.Screens;
 import fr.brouillard.oss.cssfx.CSSFX;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import net.rgielen.fxweaver.core.FxWeaver;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -49,6 +46,7 @@ public class MainApp extends Application {
 		stage.initStyle(StageStyle.TRANSPARENT);
 		stage.setTitle("Inversiones7H");
 		stage.setScene(scene);
+		stage.getIcons().add(new Image(MainApp.class.getResourceAsStream("logo.png")));
 		stage.show();
 
 		LoginViewController loginViewController = context.getBean(LoginViewController.class);

@@ -185,12 +185,12 @@
                   <Image url="@../2649288.png" />
                </image>
             </ImageView>
-            <MFXButton fx:id="registrarBtn" computeRadiusMultiplier="false" layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" text="Comprar">
+            <MFXButton fx:id="registrarBtn" layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Comprar">
                <font>
                   <Font size="18.0" />
                </font>
             </MFXButton>
-            <MFXButton fx:id="volverAtrasBtn" computeRadiusMultiplier="false" depthLevel="LEVEL0" layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" text="Volver atras" />
+            <MFXButton fx:id="volverAtrasBtn" layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
             <MFXTextField fx:id="idField" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
             <MFXTextField fx:id="productoField" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
             <MFXTextField fx:id="proveedorField" floatMode="DISABLED" layoutX="229.0" layoutY="282.0" prefHeight="43.0" prefWidth="175.0" />
