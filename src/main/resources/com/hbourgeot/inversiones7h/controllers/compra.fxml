@@ -186,10 +186,34 @@
                </image>
             </ImageView>
             <MFXButton fx:id="registrarBtn" computeRadiusMultiplier="false" layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" text="Comprar">
+            <MFXButton layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Comprar">
                <font>
                   <Font size="18.0" />
                </font>
             </MFXButton>
+            <MFXButton layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
+            <MFXTextField layoutX="229.0" layoutY="38.0" prefHeight="49.0" prefWidth="116.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="229.0" layoutY="120.0" prefHeight="49.0" prefWidth="116.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="229.0" layoutY="203.0" prefHeight="49.0" prefWidth="116.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField layoutX="229.0" layoutY="278.0" prefHeight="49.0" prefWidth="116.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXSpinner graphicTextGap="0.0" layoutX="372.0" layoutY="206.0" prefHeight="43.0" prefWidth="153.0" />
+            <MFXTextField layoutX="853.0" layoutY="158.0" prefHeight="49.0" prefWidth="116.0">
+               <textFill>
+                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <SplitMenuButton layoutX="372.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
             <MFXButton fx:id="volverAtrasBtn" computeRadiusMultiplier="false" depthLevel="LEVEL0" layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" text="Volver atras" />
             <MFXTextField fx:id="idField" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
             <MFXTextField fx:id="productoField" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
@@ -226,6 +250,7 @@
                   <Font size="13.0" />
                </font>
             </SplitMenuButton>
+            <SplitMenuButton layoutX="372.0" layoutY="290.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
             <SplitMenuButton layoutX="430.0" layoutY="290.0" mnemonicParsing="false" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
