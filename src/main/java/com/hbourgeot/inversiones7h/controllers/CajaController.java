@@ -1,18 +1,19 @@
 package com.hbourgeot.inversiones7h.controllers;
 
+import com.hbourgeot.inversiones7h.BootInitializable;
 import com.hbourgeot.inversiones7h.MainApp;
 import io.github.palexdev.materialfx.controls.MFXIconWrapper;
 import io.github.palexdev.materialfx.controls.MFXRectangleToggleNode;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import io.github.palexdev.materialfx.utils.ScrollUtils;
 import io.github.palexdev.materialfx.utils.ToggleButtonsUtil;
-import io.github.palexdev.materialfx.utils.others.loader.MFXLoader;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -27,12 +28,17 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
 @FxmlView("Caja.fxml")
-public class CajaController implements Initializable {
+public class CajaController implements BootInitializable {
 	private Stage stage;
 	private double xOffset;
 	private double yOffset;
@@ -64,6 +70,11 @@ public class CajaController implements Initializable {
 
 	@FXML
 	private StackPane logoContainer;
+
+	@Autowired
+	private FxWeaver fxWeaver;
+
+	private ApplicationContext applicationContext; // contexto de spring
 
 	public CajaController() {
 		this.toggleGroup = new ToggleGroup();
@@ -104,24 +115,29 @@ public class CajaController implements Initializable {
 	}
 
 	private void initializeLoader() {
-		MFXLoader loader = new MFXLoader();
-		/*loader.addView(MFXLoaderBean.of("BUTTONS", loadURL("controllers/Buttons.controllers")).setBeanToNodeMapper(() -> createToggle("fas-circle-dot", "Buttons")).setDefaultRoot(true).get());
-		loader.addView(MFXLoaderBean.of("CHECKS_RADIOS_TOGGLES", loadURL("controllers/ChecksRadiosToggles.controllers")).setBeanToNodeMapper(() -> createToggle("fas-toggle-on", "Checks, Radios, Toggles")).get());
-		loader.addView(MFXLoaderBean.of("FONT-RESOURCES", loadURL("controllers/FontResources.controllers")).setBeanToNodeMapper(() -> createToggle("fas-icons", "Font Resources")).get());
-		loader.setOnLoadedAction(beans -> {
-			List<ToggleButton> nodes = beans.stream()
-					.map(bean -> {
-						ToggleButton toggle = (ToggleButton) bean.getBeanToNodeMapper().get();
-						toggle.setOnAction(event -> contentPane.getChildren().setAll(bean.getRoot()));
-						if (bean.isDefaultView()) {
-							contentPane.getChildren().setAll(bean.getRoot());
-							toggle.setSelected(true);
-						}
-						return toggle;
-					}).collect(Collectors.toList());
-			navBar.getChildren().setAll(nodes);
-		});*/
-		loader.start();
+		Parent ventaController = fxWeaver.loadView(VentaController.class); //cargamos vista
+		Parent clienteController = fxWeaver.loadView(ClienteController.class); //cargamos vista
+
+		// botones
+		ToggleButton ventaBtn = createToggle("fas-circle-dot", "Generar Venta");
+		ToggleButton clienteBtn = createToggle("fas-icons", "Agregar Cliente");
+
+		// eventos
+		ventaBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(ventaController);
+			// cuando se haga click, mostraremos la vista de compra
+		});
+
+		clienteBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(clienteController);
+			// cuando se haga click, mostraremos la vista de productos
+		});
+
+		// añadimos al navbar
+		navBar.getChildren().add(ventaBtn);
+		navBar.getChildren().add(clienteBtn);
+
+		contentPane.getChildren().setAll(ventaController);
 	}
 
 	private ToggleButton createToggle(String icon, String text) {
@@ -140,5 +156,30 @@ public class CajaController implements Initializable {
 
 	public void setStage(Stage stage){
 		this.stage = stage;
+	}
+
+	@Override
+	public void initConstruct() {
+
+	}
+
+	@Override
+	public void stage(Stage primaryStage) {
+
+	}
+
+	@Override
+	public Node initView() {
+		return null;
+	}
+
+	@Override
+	public void initValidator() {
+
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+	this.applicationContext = applicationContext;
 	}
 }

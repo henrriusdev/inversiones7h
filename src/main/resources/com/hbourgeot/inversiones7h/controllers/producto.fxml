@@ -15,6 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
+<?import io.github.palexdev.materialfx.controls.MFXCheckTreeView?>
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ProductosController">
    <children>
       <Label layoutX="449.0" layoutY="50.0" text="Registro de productos">
@@ -43,7 +44,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="15.0" layoutY="81.0" prefHeight="634.0" prefWidth="1247.0">
+      <Pane layoutX="17.0" layoutY="86.0" prefHeight="634.0" prefWidth="1247.0">
          <children>
             <Label layoutX="178.0" layoutY="87.0" text="Codigo:">
                <font>
@@ -97,7 +98,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="681.0" layoutY="159.0" text="Cantidad:">
+            <Label layoutX="171.0" layoutY="301.0" text="Cantidad:">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -123,7 +124,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="668.0" layoutY="85.0" text="Proveedor:">
+            <Label layoutX="158.0" layoutY="233.0" text="Proveedor:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -149,8 +150,8 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXSpinner fx:id="cantidadSpinner" graphicTextGap="0.0" layoutX="781.0" layoutY="151.0" prefHeight="43.0" prefWidth="108.0" />
-            <SplitMenuButton layoutX="973.0" layoutY="81.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="Buscar">
+            <MFXSpinner fx:id="cantidadSpinner" graphicTextGap="0.0" layoutX="259.0" layoutY="293.0" prefHeight="43.0" prefWidth="108.0" />
+            <SplitMenuButton layoutX="450.0" layoutY="229.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -172,45 +173,20 @@
                   </LinearGradient>
                </textFill>
             </SplitMenuButton>
-            <MFXTextField layoutX="204.0" layoutY="52.0" prefHeight="49.0" prefWidth="118.0">
+            <MFXTextField floatMode="DISABLED" layoutX="259.0" layoutY="79.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="204.0" layoutY="125.0" prefHeight="49.0" prefWidth="118.0">
+            <MFXTextField floatMode="DISABLED" layoutX="259.0" layoutY="152.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="204.0" layoutY="228.0" prefHeight="49.0" prefWidth="118.0">
+            <MFXTextField floatMode="DISABLED" layoutX="259.0" layoutY="225.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="732.0" layoutY="51.0" prefHeight="49.0" prefWidth="118.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill></MFXTextField>
-            <Label layoutX="553.0" layoutY="136.0" text="Cantidad Vendida:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
             <MFXCheckTreeView layoutX="732.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="49.0" prefWidth="118.0" />
-            <ImageView fitHeight="216.0" fitWidth="270.0" layoutX="881.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="324.0" fitWidth="329.0" layoutX="699.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../5166410.png" />
                </image>

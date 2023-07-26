@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="497.0" layoutY="75.0" text="Registro de venta">
          <font>
@@ -123,15 +123,15 @@
                </textFill>
             </Label>
             <MFXButton layoutX="582.0" layoutY="423.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al incio" />
-            <MFXTextField layoutX="193.0" layoutY="94.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField floatMode="DISABLED" layoutX="193.0" layoutY="94.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="193.0" layoutY="173.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField floatMode="DISABLED" layoutX="193.0" layoutY="173.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <SplitMenuButton layoutX="326.0" layoutY="186.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
+            <SplitMenuButton layoutX="392.0" layoutY="182.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -153,7 +153,7 @@
                   </LinearGradient>
                </textFill>
             </SplitMenuButton>
-            <SplitMenuButton layoutX="326.0" layoutY="275.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
+            <SplitMenuButton layoutX="392.0" layoutY="276.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -175,11 +175,11 @@
                   </LinearGradient>
                </textFill>
             </SplitMenuButton>
-            <MFXTextField layoutX="193.0" layoutY="263.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField floatMode="DISABLED" layoutX="193.0" layoutY="263.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="667.0" layoutY="186.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField floatMode="DISABLED" layoutX="667.0" layoutY="186.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
