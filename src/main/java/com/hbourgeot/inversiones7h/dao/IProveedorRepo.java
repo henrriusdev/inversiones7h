@@ -1,5 +1,6 @@
 package com.hbourgeot.inversiones7h.dao;
 
+import com.hbourgeot.inversiones7h.entities.Producto;
 import com.hbourgeot.inversiones7h.entities.Proveedor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -16,6 +17,9 @@ public interface IProveedorRepo extends CrudRepository<Proveedor, Long> {
 
   @Override
   Optional<Proveedor> findById(Long aLong);
+
+  // Método para buscar un producto por su nombre
+  Optional<Proveedor> findByNombre(String nombre);
 
   @Override
   boolean existsById(Long aLong);

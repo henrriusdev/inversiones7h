@@ -52,8 +52,8 @@ public class Compra {
     return cantidad;
   }
 
-  public void setCantidad(Long cantidad) {
-    this.cantidad = cantidad;
+  public void setCantidad(Integer cantidad2) {
+    this.cantidad = cantidad2;
   }
 
   public BigDecimal getMontoTotal() {

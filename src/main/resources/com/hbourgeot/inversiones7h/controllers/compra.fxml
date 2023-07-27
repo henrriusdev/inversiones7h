@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.CompraController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.CompraController">
    <children>
       <Label layoutX="534.0" layoutY="71.0" text="Generar compra">
          <font>
@@ -191,11 +191,11 @@
                </font>
             </MFXButton>
             <MFXButton fx:id="volverAtrasBtn" layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
-            <MFXTextField fx:id="idField" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXTextField fx:id="productoField" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXTextField fx:id="proveedorField" floatMode="DISABLED" layoutX="229.0" layoutY="282.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXSpinner fx:id="cantidadSpinner" graphicTextGap="0.0" layoutX="229.0" layoutY="206.0" prefHeight="43.0" prefWidth="153.0" />
-            <MFXTextField fx:id="montoField" allowEdit="false" floatMode="DISABLED" layoutX="853.0" layoutY="161.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXTextField fx:id="id" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXTextField fx:id="Producto" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXTextField fx:id="proveedor" floatMode="DISABLED" layoutX="229.0" layoutY="282.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXSpinner fx:id="CantidadSpinner" graphicTextGap="0.0" layoutX="229.0" layoutY="206.0" prefHeight="43.0" prefWidth="153.0" />
+            <MFXTextField fx:id="monto" allowEdit="false" floatMode="DISABLED" layoutX="853.0" layoutY="161.0" prefHeight="43.0" prefWidth="175.0" />
             <SplitMenuButton layoutX="430.0" layoutY="131.0" mnemonicParsing="false" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />

@@ -15,8 +15,8 @@ public interface IProductoRepo extends CrudRepository<Producto, String> {
   @Override
   <S extends Producto> Iterable<S> saveAll(Iterable<S> entities);
 
-  @Override
-  Optional<Producto> findById(String s);
+  // Método para buscar un producto por su nombre
+  Optional<Producto> findByNombre(String nombre);
 
   @Override
   boolean existsById(String s);

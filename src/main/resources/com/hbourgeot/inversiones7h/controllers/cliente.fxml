@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ClienteController">
    <children>
       <Label layoutX="453.0" layoutY="58.0" text="Registro de clientes">
          <font>
@@ -198,27 +198,27 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXTextField floatMode="DISABLED" floatingText="cedula" layoutX="171.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
+            <MFXTextField fx:id="cedula" floatMode="DISABLED" floatingText="cedula" layoutX="171.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="171.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
+            <MFXTextField fx:id="nombreCliente" floatMode="DISABLED" layoutX="171.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="171.0" layoutY="237.0" prefHeight="38.0" prefWidth="117.0">
+            <MFXTextField fx:id="apellidoCliente" floatMode="DISABLED" layoutX="171.0" layoutY="237.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="533.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
+            <MFXTextField fx:id="tlfCliente" floatMode="DISABLED" layoutX="533.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="533.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
+            <MFXTextField fx:id="dirCliente" floatMode="DISABLED" layoutX="533.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
@@ -233,7 +233,7 @@
                   <Image url="@../pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" />
                </image>
             </ImageView>
-            <MFXButton layoutX="195.0" layoutY="374.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
+            <MFXButton fx:id="registrarBtn" layoutX="195.0" layoutY="374.0" onAction="#registrar" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
             <MFXButton layoutX="442.0" layoutY="374.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
          </children>
       </Pane>

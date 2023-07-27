@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "clientes")
-public class Cliente implements Serializable {
+public class Cliente implements Serializable{
 
   @Id
   @Column(length = 18, name = "cedula")
@@ -22,7 +22,7 @@ public class Cliente implements Serializable {
   @Column(length = 60, nullable = false)
   private String apellido;
 
-  @Column(nullable = false, precision = 7, scale = 2, name = "gasto_total")
+  @Column(nullable = true, precision = 7, scale = 2, name = "gasto_total")
   private BigDecimal gastoTotal;
 
   @Column(nullable = false, length = 15)

@@ -1,7 +1,15 @@
 package com.hbourgeot.inversiones7h.controllers;
 
 import com.hbourgeot.inversiones7h.BootInitializable;
+import com.hbourgeot.inversiones7h.entities.Cliente;
+import com.hbourgeot.inversiones7h.services.ClienteService;
+
+import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -19,8 +27,27 @@ public class ClienteController implements BootInitializable {
 
   @Autowired
   private FxWeaver fxWeaver;
+  
+  @Autowired
+  private ClienteService clienteService; //inyectamos el servicio clienteService
+
 
   private ApplicationContext applicationContext; // contexto de spring
+
+  @FXML
+  private MFXTextField cedula;
+  
+  @FXML
+  private MFXTextField nombreCliente;
+  
+  @FXML
+  private MFXTextField apellidoCliente;
+  
+  @FXML
+  private MFXTextField dirCliente;
+
+  @FXML
+  private MFXTextField tlfCliente;
 
   @Override
   public void initConstruct() {
@@ -51,4 +78,60 @@ public class ClienteController implements BootInitializable {
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
     this.applicationContext = applicationContext;
   }
+
+  @FXML
+  public void registrar(ActionEvent event){
+
+    String cedulaInput = cedula.getText();
+    String nombreInput = nombreCliente.getText();
+    String apellidoInput = apellidoCliente.getText();
+    String dirInput = dirCliente.getText();
+    String tlfInput = tlfCliente.getText();
+
+      // Realiza las validaciones de los campos de que no existan campos vacios
+      if (cedulaInput.isEmpty() || nombreInput.isEmpty() || apellidoInput.isEmpty() || dirInput.isEmpty() || tlfInput.isEmpty()) {
+        mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
+        return;
+    }
+
+    // Si pasa todas las validaciones, crea el nuevo cliente y guarda en la base de datos
+    Cliente nuevoCliente = new Cliente();
+
+    //Configuramos  los datos a insertar
+      nuevoCliente.setCedulaIdentidad(cedulaInput);
+      nuevoCliente.setNombre(nombreInput);
+      nuevoCliente.setApellido(apellidoInput);
+      nuevoCliente.setTelefono(tlfInput);
+      nuevoCliente.setDireccion(dirInput);
+
+  clienteService.save(nuevoCliente);
+
+  // Limpia los campos de entrada después de registrar el cliente
+
+    cedula.setText("");
+    nombreCliente.setText("");
+    apellidoCliente.setText("");
+    dirCliente.setText("");
+    tlfCliente.setText("");
+
+
+  // Muestra un mensaje de éxito
+  mostrarAlertaExito("Éxito", "Cliente registrado exitosamente", "El cliente ha sido registrado con éxito en la base de datos.");
+  
+  private void mostrarAlertaError(String titulo, String header, String mensaje) {
+    Alert alert = new Alert(AlertType.ERROR);
+    alert.setTitle(titulo);
+    alert.setHeaderText(header);
+    alert.setContentText(mensaje);
+    alert.showAndWait();
+  }
+
+  private void mostrarAlertaExito(String titulo, String header, String mensaje) {
+    Alert alert = new Alert(AlertType.INFORMATION);
+    alert.setTitle(titulo);
+    alert.setHeaderText(header);
+    alert.setContentText(mensaje);
+    alert.showAndWait();
+  }
+    
 }
