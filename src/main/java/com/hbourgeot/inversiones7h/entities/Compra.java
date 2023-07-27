@@ -52,7 +52,7 @@ public class Compra {
     return cantidad;
   }
 
-  public void setCantidad(Integer cantidad2) {
+  public void setCantidad(Long cantidad2) {
     this.cantidad = cantidad2;
   }
 

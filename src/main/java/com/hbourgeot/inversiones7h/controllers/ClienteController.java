@@ -116,7 +116,8 @@ public class ClienteController implements BootInitializable {
 
 
   // Muestra un mensaje de éxito
-  mostrarAlertaExito("Éxito", "Cliente registrado exitosamente", "El cliente ha sido registrado con éxito en la base de datos.");
+  mostrarAlertaExito("Éxito", "Cliente registrado exitosamente");
+}
   
   private void mostrarAlertaError(String titulo, String header, String mensaje) {
     Alert alert = new Alert(AlertType.ERROR);
@@ -126,11 +127,10 @@ public class ClienteController implements BootInitializable {
     alert.showAndWait();
   }
 
-  private void mostrarAlertaExito(String titulo, String header, String mensaje) {
+  private void mostrarAlertaExito(String titulo, String header) {
     Alert alert = new Alert(AlertType.INFORMATION);
     alert.setTitle(titulo);
     alert.setHeaderText(header);
-    alert.setContentText(mensaje);
     alert.showAndWait();
   }
     

@@ -65,7 +65,7 @@ public class CompraController implements BootInitializable {
   private MFXButton volverAtrasBtn;
 
   @FXML
-  private MFXSpinner<Integer> cantidadSpinner;
+  private MFXSpinner<Integer> CantidadSpinner;
 
   @Override
   public void initConstruct() {
@@ -92,7 +92,7 @@ public class CompraController implements BootInitializable {
   public void initialize(URL location, ResourceBundle resources) {
     SpinnerModel<Integer> spinnerModel = new IntegerSpinnerModel();
     spinnerModel.setValue(0);
-    cantidadSpinner.setSpinnerModel(spinnerModel);
+    CantidadSpinner.setSpinnerModel(spinnerModel);
   }
 
   @Override
@@ -104,13 +104,13 @@ public class CompraController implements BootInitializable {
   // Método para registrar la compra al hacer clic en el botón "Registrar"
   
   @FXML 
-  private void registrarCompra(ActionEvent event) {
+  public void registrarCompra(ActionEvent event) {
 
     // Obtener los datos ingresados por el usuario
 
     String productoNombre = Producto.getText();
     String proveedorNombre = Proveedor.getText();
-    Integer cantidad = cantidadSpinner.getValue();
+    Integer cantidad = CantidadSpinner.getValue();
     BigDecimal montoTotal = new BigDecimal(monto.getText());
 
     // Obtener el Producto y el Proveedor desde la base de datos (asumiendo que ya existen)
@@ -123,7 +123,7 @@ public class CompraController implements BootInitializable {
     
     compra.setProducto(producto);
     compra.setProveedor(proveedor);
-    compra.setCantidad(cantidad);
+    compra.setCantidad(cantidad.longValue());
     compra.setMontoTotal(montoTotal);
 
     // Guardar la compra utilizando el servicio CompraService

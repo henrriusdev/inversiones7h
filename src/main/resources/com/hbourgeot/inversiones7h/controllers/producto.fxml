@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckTreeView?>
 <?import io.github.palexdev.materialfx.controls.MFXSpinner?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -15,8 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<?import io.github.palexdev.materialfx.controls.MFXCheckTreeView?>
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ProductosController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ProductosController">
    <children>
       <Label layoutX="449.0" layoutY="50.0" text="Registro de productos">
          <font>
@@ -173,11 +173,11 @@
                   </LinearGradient>
                </textFill>
             </SplitMenuButton>
-            <MFXTextField floatMode="DISABLED" layoutX="259.0" layoutY="79.0" prefHeight="43.0" prefWidth="175.0">
+            <MFXTextField fx:id="codigoField" floatMode="DISABLED" layoutX="259.0" layoutY="79.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="259.0" layoutY="152.0" prefHeight="43.0" prefWidth="175.0">
+            <MFXTextField fx:id="nombreField" floatMode="DISABLED" layoutX="259.0" layoutY="152.0" prefHeight="43.0" prefWidth="175.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
@@ -191,7 +191,7 @@
                   <Image url="@../5166410.png" />
                </image>
             </ImageView>
-            <MFXButton fx:id="registrarBtn" layoutX="383.0" layoutY="468.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
+            <MFXButton fx:id="registrarBtn" layoutX="383.0" layoutY="468.0" onAction="#registrarProducto" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
             <MFXButton fx:id="volverAtrasBtn" layoutX="670.0" layoutY="469.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al incio" />
          </children>
       </Pane>
