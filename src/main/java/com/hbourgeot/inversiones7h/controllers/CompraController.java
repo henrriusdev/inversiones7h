@@ -123,7 +123,7 @@ public class CompraController implements BootInitializable {
     
     compra.setProducto(producto);
     compra.setProveedor(proveedor);
-    compra.setCantidad(cantidad);
+    compra.setCantidad(cantidad.longValue());
     compra.setMontoTotal(montoTotal);
 
     // Guardar la compra utilizando el servicio CompraService

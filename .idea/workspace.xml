@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="arregladas varias cosas">
+    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="añadido puto rif">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inversiones-data/database.mv.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CajaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CajaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SupervisorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Caja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Caja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Sobre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Sobre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fxml/Supervisor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Supervisor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CompraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/VentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/VentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/venta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/venta.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +31,38 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="henry" />
+                    <option name="lastUsedInstant" value="1690053272" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1690053271" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
@@ -56,40 +82,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "jdk.selected.JAVA_MODULE": "temurin-17",
-    "last_opened_file_path": "C:/Users/henrry/Downloads/openjfx-17.0.7_windows-x64_bin-sdk/javafx-sdk-17.0.7/lib/javafx.web.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "c866b06dc8ae7d975c5482b201c169bf",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;henry&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Downloads/MaterialFX-main/MaterialFX-main/demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c866b06dc8ae7d975c5482b201c169bf&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\hbourgeot\inversiones7h" />
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Maven.inversiones7h [spring-boot:run]">
     <configuration name="inversiones7h [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
@@ -174,10 +207,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="inversiones7h" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hbourgeot.inversiones7h.SpringApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Maven.inversiones7h [spring-boot:run]" />
       <item itemvalue="Maven.materialJava [javafx:compile]" />
       <item itemvalue="Maven.materialJava [javafx:run]" />
+      <item itemvalue="Spring Boot.SpringApp" />
       <item itemvalue="Spring Boot.MainApp" />
     </list>
     <recent_temporary>
@@ -216,6 +257,20 @@
       <workItem from="1689417056947" duration="16000" />
       <workItem from="1689492163991" duration="1543000" />
       <workItem from="1689547409482" duration="32789000" />
+      <workItem from="1689935649588" duration="10000" />
+      <workItem from="1690053187093" duration="1215000" />
+      <workItem from="1690076098418" duration="600000" />
+      <workItem from="1690077860641" duration="6899000" />
+      <workItem from="1690087235357" duration="626000" />
+      <workItem from="1690087961275" duration="88000" />
+      <workItem from="1690152533399" duration="608000" />
+      <workItem from="1690168339356" duration="749000" />
+      <workItem from="1690196259568" duration="2061000" />
+      <workItem from="1690219121371" duration="11000" />
+      <workItem from="1690423341403" duration="1846000" />
+      <workItem from="1690425723274" duration="245000" />
+      <workItem from="1690457432947" duration="5000" />
+      <workItem from="1690457502095" duration="1070000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1686759154955</created>
@@ -240,7 +295,55 @@
       <option name="project" value="LOCAL" />
       <updated>1689368453751</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="arregladas varias cosas">
+      <option name="closed" value="true" />
+      <created>1690168474156</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690168474156</updated>
+    </task>
+    <task id="LOCAL-00005" summary="añadiendo comentarios a SupervisorController">
+      <option name="closed" value="true" />
+      <created>1690198302817</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690198302817</updated>
+    </task>
+    <task id="LOCAL-00006" summary="añadiendo mas controladores y arreglos visuales">
+      <option name="closed" value="true" />
+      <created>1690338704296</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690338704296</updated>
+    </task>
+    <task id="LOCAL-00007" summary="iconos a botonesss">
+      <option name="closed" value="true" />
+      <created>1690341507086</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690341507086</updated>
+    </task>
+    <task id="LOCAL-00008" summary="funcionando clientes">
+      <option name="closed" value="true" />
+      <created>1690346586851</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690346586851</updated>
+    </task>
+    <task id="LOCAL-00009" summary="añadido puto rif">
+      <option name="closed" value="true" />
+      <created>1690379988331</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690379988331</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +364,12 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="arreglados muchos bugs" />
     <MESSAGE value="arregladas varias cosas" />
-    <option name="LAST_COMMIT_MESSAGE" value="arregladas varias cosas" />
+    <MESSAGE value="añadiendo comentarios a SupervisorController" />
+    <MESSAGE value="añadiendo mas controladores y arreglos visuales" />
+    <MESSAGE value="iconos a botonesss" />
+    <MESSAGE value="funcionando clientes" />
+    <MESSAGE value="añadido puto rif" />
+    <option name="LAST_COMMIT_MESSAGE" value="añadido puto rif" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

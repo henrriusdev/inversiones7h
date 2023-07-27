@@ -80,7 +80,7 @@ public class ClienteController implements BootInitializable {
   }
 
   @FXML
-  public void registrar(ActionEvent event){
+  public void registrar(ActionEvent event) {
 
     String cedulaInput = cedula.getText();
     String nombreInput = nombreCliente.getText();
@@ -88,25 +88,25 @@ public class ClienteController implements BootInitializable {
     String dirInput = dirCliente.getText();
     String tlfInput = tlfCliente.getText();
 
-      // Realiza las validaciones de los campos de que no existan
-      if (cedulaInput.isEmpty() || nombreInput.isEmpty() || apellidoInput.isEmpty() || dirInput.isEmpty() || tlfInput.isEmpty()) {
-        mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
-        return;
+    // Realiza las validaciones de los campos de que no existan
+    if (cedulaInput.isEmpty() || nombreInput.isEmpty() || apellidoInput.isEmpty() || dirInput.isEmpty() || tlfInput.isEmpty()) {
+      mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
+      return;
     }
 
     // Si pasa todas las validaciones, crea el nuevo cliente y guarda en la base de datos
     Cliente nuevoCliente = new Cliente();
 
     //Configuramos  los datos a insertar
-      nuevoCliente.setCedulaIdentidad(cedulaInput);
-      nuevoCliente.setNombre(nombreInput);
-      nuevoCliente.setApellido(apellidoInput);
-      nuevoCliente.setTelefono(tlfInput);
-      nuevoCliente.setDireccion(dirInput);
+    nuevoCliente.setCedulaIdentidad(cedulaInput);
+    nuevoCliente.setNombre(nombreInput);
+    nuevoCliente.setApellido(apellidoInput);
+    nuevoCliente.setTelefono(tlfInput);
+    nuevoCliente.setDireccion(dirInput);
 
-  clienteService.save(nuevoCliente);
+    clienteService.save(nuevoCliente);
 
-  // Limpia los campos de entrada después de registrar el cliente
+    // Limpia los campos de entrada después de registrar el cliente
 
     cedula.setText("");
     nombreCliente.setText("");
@@ -115,8 +115,9 @@ public class ClienteController implements BootInitializable {
     tlfCliente.setText("");
 
 
-  // Muestra un mensaje de éxito
-  mostrarAlertaExito("Éxito", "Cliente registrado exitosamente", "El cliente ha sido registrado con éxito en la base de datos.");
+    // Muestra un mensaje de éxito
+    mostrarAlertaExito("Éxito", "Cliente registrado exitosamente", "El cliente ha sido registrado con éxito en la base de datos.");
+  }
   
   private void mostrarAlertaError(String titulo, String header, String mensaje) {
     Alert alert = new Alert(AlertType.ERROR);
