@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ClienteController">
    <children>
       <Label layoutX="453.0" layoutY="58.0" text="Registro de clientes">
          <font>
@@ -172,72 +172,37 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="405.0" layoutY="242.0" text="Gasto Total:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.9975609756097561">
-                           <color>
-                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <MFXTextField floatingText="cedula" layoutX="171.0" layoutY="52.0" prefHeight="27.0" prefWidth="117.0">
+            <MFXTextField fx:id="cedula" floatMode="DISABLED" floatingText="cedula" layoutX="171.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField layoutX="171.0" layoutY="141.0" prefHeight="49.0" prefWidth="117.0">
+            <MFXTextField fx:id="nombreCliente" floatMode="DISABLED" layoutX="171.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField layoutX="171.0" layoutY="228.0" prefHeight="49.0" prefWidth="117.0">
+            <MFXTextField fx:id="apellidoCliente" floatMode="DISABLED" layoutX="171.0" layoutY="237.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField layoutX="533.0" layoutY="52.0" prefHeight="49.0" prefWidth="117.0">
+            <MFXTextField fx:id="tlfCliente" floatMode="DISABLED" layoutX="533.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField layoutX="533.0" layoutY="141.0" prefHeight="49.0" prefWidth="117.0">
+            <MFXTextField fx:id="dirCliente" floatMode="DISABLED" layoutX="533.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField layoutX="533.0" layoutY="228.0" prefHeight="49.0" prefWidth="117.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill>
-            </MFXTextField>
-            <ImageView fitHeight="273.0" fitWidth="271.0" layoutX="698.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="457.0" fitWidth="391.0" layoutX="698.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Pictures/pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" />
+                  <Image url="@../pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" />
                </image>
             </ImageView>
-            <MFXButton layoutX="195.0" layoutY="374.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </MFXButton>
+            <MFXButton fx:id="registrarBtn" layoutX="195.0" layoutY="374.0" onAction="#registrar" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
             <MFXButton layoutX="442.0" layoutY="374.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
          </children>
       </Pane>

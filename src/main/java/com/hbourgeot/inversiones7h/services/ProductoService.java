@@ -4,12 +4,20 @@ import com.hbourgeot.inversiones7h.dao.IProductoRepo;
 import com.hbourgeot.inversiones7h.entities.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductoService implements IProductoService {
+
+  @Autowired
+  private IProductoRepo productoRepo;
+
+  public Producto findByNombre(String nombre) {
+      Optional<Producto> productoOptional = productoRepo.findByNombre(nombre);
+      return productoOptional.orElse(null); 
+  }
 
   @Autowired
   private IProductoRepo repo;

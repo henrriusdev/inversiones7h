@@ -5,6 +5,8 @@
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -12,9 +14,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="666.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.LoginController">
+<AnchorPane prefHeight="666.0" prefWidth="1022.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.LoginController">
    <children>
-      <VBox alignment="CENTER" layoutX="237.0" layoutY="164.0" prefHeight="314.0" prefWidth="549.0" style="-fx-spacing: 10;">
+      <VBox alignment="CENTER" layoutX="171.0" layoutY="176.0" prefHeight="314.0" prefWidth="388.0" style="-fx-spacing: 10; -fx-background-color: #fff;">
          <children>
             <Label contentDisplay="CENTER" prefHeight="49.0" prefWidth="109.0" text="Inicie sesión">
                <font>
@@ -58,7 +60,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Label layoutX="114.0" layoutY="54.0" prefHeight="49.0" prefWidth="795.0" text="Bienvenido al sistema de Inversiones 7H" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="54.0" prefHeight="49.0" prefWidth="795.0" text="Inversiones 7H" textAlignment="CENTER">
          <font>
             <Font name="SansSerif Regular" size="43.0" />
          </font>
@@ -79,5 +81,10 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <ImageView fitHeight="236.0" fitWidth="260.0" layoutX="608.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../logo_rif.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

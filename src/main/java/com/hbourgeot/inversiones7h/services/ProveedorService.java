@@ -1,14 +1,28 @@
 package com.hbourgeot.inversiones7h.services;
 
+import com.hbourgeot.inversiones7h.dao.IProductoRepo;
 import com.hbourgeot.inversiones7h.dao.IProveedorRepo;
+import com.hbourgeot.inversiones7h.entities.Producto;
 import com.hbourgeot.inversiones7h.entities.Proveedor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProveedorService implements IProveedorService{
+  
+  @Autowired
+  private IProveedorRepo proveedorRepo;
+
+  public Proveedor findByNombre(String nombre) {
+      Optional<Proveedor> proveedorOptional = proveedorRepo.findByNombre(nombre);
+      return proveedorOptional.orElse(null); 
+  }
+  
+  
+  
   @Autowired
   public IProveedorRepo repo;
 
