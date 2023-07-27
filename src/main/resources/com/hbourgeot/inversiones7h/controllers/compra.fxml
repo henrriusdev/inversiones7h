@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXSpinner?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.CompraController">
    <children>
       <Label layoutX="534.0" layoutY="71.0" text="Generar compra">
          <font>
@@ -156,33 +156,21 @@
             </Label>
             <ImageView fitHeight="254.0" fitWidth="255.0" layoutX="911.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Pictures/2649288.png" />
+                  <Image url="@../2649288.png" />
                </image>
             </ImageView>
-            <MFXButton layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Comprar">
+            <MFXButton fx:id="registrarBtn" layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Comprar">
                <font>
                   <Font size="18.0" />
                </font>
             </MFXButton>
-            <MFXButton layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
-            <MFXTextField layoutX="229.0" layoutY="59.0" prefHeight="49.0" prefWidth="116.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill></MFXTextField>
-            <MFXTextField layoutX="229.0" layoutY="145.0" prefHeight="49.0" prefWidth="116.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill></MFXTextField>
-            <MFXTextField layoutX="229.0" layoutY="238.0" prefHeight="49.0" prefWidth="116.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill></MFXTextField>
-            <MFXSpinner graphicTextGap="0.0" layoutX="372.0" layoutY="147.0" prefHeight="43.0" prefWidth="153.0" />
-            <MFXTextField layoutX="853.0" layoutY="158.0" prefHeight="49.0" prefWidth="116.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill></MFXTextField>
-            <SplitMenuButton layoutX="372.0" layoutY="70.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
+            <MFXButton fx:id="volverAtrasBtn" layoutX="653.0" layoutY="416.0" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Volver al inicio" />
+            <MFXTextField fx:id="id" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXTextField fx:id="Producto" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXTextField fx:id="proveedor" floatMode="DISABLED" layoutX="229.0" layoutY="282.0" prefHeight="43.0" prefWidth="175.0" />
+            <MFXSpinner fx:id="CantidadSpinner" graphicTextGap="0.0" layoutX="229.0" layoutY="206.0" prefHeight="43.0" prefWidth="153.0" />
+            <MFXTextField fx:id="monto" allowEdit="false" floatMode="DISABLED" layoutX="853.0" layoutY="161.0" prefHeight="43.0" prefWidth="175.0" />
+            <SplitMenuButton layoutX="430.0" layoutY="131.0" mnemonicParsing="false" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -212,7 +200,7 @@
                   <Font size="13.0" />
                </font>
             </SplitMenuButton>
-            <SplitMenuButton layoutX="372.0" layoutY="290.0" mnemonicParsing="false" style="-fx-background-color: #a95ef8;" text="Buscar">
+            <SplitMenuButton layoutX="430.0" layoutY="290.0" mnemonicParsing="false" text="Buscar">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
