@@ -72,7 +72,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="111.0" layoutY="136.0" text="Nombre:">
+            <Label layoutX="107.0" layoutY="145.0" text="Nombre:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -177,7 +177,7 @@
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField layoutX="204.0" layoutY="125.0" prefHeight="49.0" prefWidth="118.0">
+            <MFXTextField layoutX="204.0" layoutY="134.0" prefHeight="49.0" prefWidth="118.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
@@ -189,7 +189,7 @@
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <Label layoutX="553.0" layoutY="136.0" text="Cantidad Vendida:">
+            <Label layoutX="549.0" layoutY="239.0" text="Cantidad Vendida:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -210,8 +210,8 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXCheckTreeView layoutX="732.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="49.0" prefWidth="118.0" />
-            <ImageView fitHeight="216.0" fitWidth="270.0" layoutX="881.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+            <MFXCheckTreeView layoutX="732.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="49.0" prefWidth="118.0" />
+            <ImageView fitHeight="216.0" fitWidth="270.0" layoutX="919.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../../../Pictures/5166410%20(1).png" />
                </image>
@@ -226,6 +226,33 @@
                   <Font size="18.0" />
                </font>
             </MFXButton>
+            <Label layoutX="642.0" layoutY="145.0" text="Precio:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.013458950201884241">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MFXTextField layoutX="732.0" layoutY="134.0" prefHeight="49.0" prefWidth="118.0" />
          </children>
       </Pane>
    </children>
