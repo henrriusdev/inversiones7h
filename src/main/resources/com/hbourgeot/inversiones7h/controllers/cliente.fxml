@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ClienteController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbourgeot.inversiones7h.controllers.ClienteController">
    <children>
       <Label layoutX="453.0" layoutY="58.0" text="Registro de clientes">
          <font>
@@ -172,32 +172,6 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="405.0" layoutY="242.0" text="Gasto Total:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.9975609756097561">
-                           <color>
-                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
             <MFXTextField fx:id="cedula" floatMode="DISABLED" floatingText="cedula" layoutX="171.0" layoutY="58.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
@@ -219,11 +193,6 @@
                </textFill>
             </MFXTextField>
             <MFXTextField fx:id="dirCliente" floatMode="DISABLED" layoutX="533.0" layoutY="147.0" prefHeight="38.0" prefWidth="117.0">
-               <textFill>
-                  <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
-               </textFill>
-            </MFXTextField>
-            <MFXTextField floatMode="DISABLED" layoutX="533.0" layoutY="237.0" prefHeight="38.0" prefWidth="117.0">
                <textFill>
                   <Color red="0.3333333432674408" green="0.0941176488995552" blue="0.8156862854957581" opacity="0.8700000047683716" />
                </textFill>

@@ -88,7 +88,7 @@ public class ClienteController implements BootInitializable {
     String dirInput = dirCliente.getText();
     String tlfInput = tlfCliente.getText();
 
-      // Realiza las validaciones de los campos de que no existan campos vacios
+      // Realiza las validaciones de los campos de que no existan
       if (cedulaInput.isEmpty() || nombreInput.isEmpty() || apellidoInput.isEmpty() || dirInput.isEmpty() || tlfInput.isEmpty()) {
         mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
         return;
