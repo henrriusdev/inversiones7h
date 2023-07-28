@@ -42,5 +42,5 @@
             <VBox fx:id="navBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" styleClass="navbar" />
         </MFXScrollPane>
     </VBox>
-    <StackPane fx:id="contentPane" layoutX="252.0" layoutY="52.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="51.0" />
+    <StackPane fx:id="contentPane" layoutX="254.0" layoutY="53.0" prefHeight="667.0" prefWidth="1028.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="253.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="52.0" />
 </AnchorPane>
