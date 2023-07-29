@@ -116,6 +116,15 @@ public class ProductosController implements BootInitializable {
     return;
 }
 
+//verificamos si producto ya existe 
+
+    Producto productoExiste = ProductoService.findByCodigo(codigoInput);
+    
+    if(productoExiste != null){
+      mostrarAlertaError("Error de registro", "Producto ya registrado", "El producto ya fue ingresado en la base de datos.");
+        return;
+    }
+
 // agregamos el producto si todas las validaciones son correctas
     Producto producto = new Producto();
 

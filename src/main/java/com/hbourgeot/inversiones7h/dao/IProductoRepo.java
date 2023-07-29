@@ -1,6 +1,8 @@
 package com.hbourgeot.inversiones7h.dao;
 
 import com.hbourgeot.inversiones7h.entities.Producto;
+
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +19,10 @@ public interface IProductoRepo extends CrudRepository<Producto, String> {
 
   // Método para buscar un producto por su nombre
   Optional<Producto> findByNombre(String nombre);
+
+  // Método para buscar un producto por su codigo
+
+  Optional<Producto> findByCodigo(String codigo);
 
   @Override
   boolean existsById(String s);

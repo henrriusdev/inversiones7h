@@ -20,8 +20,8 @@ public class Proveedor implements Serializable {
   private static final long serialVersionUID = -4509451998659894417L; // codigo de la interfaz
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  @Column(length = 18, name = "cedula")
+  private String cedulaIdentidad;
 
   @Column(nullable = false, length = 150)
   private String nombre;
@@ -32,12 +32,12 @@ public class Proveedor implements Serializable {
   @Column(nullable = false)
   private List<Categoria> categoria;
 
-  public Long getId() {
-    return id;
+  public String getcedulaIndentidad() {
+    return cedulaIdentidad;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setCedulaIdentidad(String cedulaIdentidad) {
+    this.cedulaIdentidad = cedulaIdentidad;
   }
 
   public String getNombre() {

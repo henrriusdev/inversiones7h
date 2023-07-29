@@ -99,8 +99,8 @@ public class ClienteController implements BootInitializable {
     Cliente clienteExistente = clienteService.findByCedulaIdentidad(cedulaInput);
 
     //buscamos cliente por nombre y apellido
-    Cliente clienteNombre = clienteService.findByNombre(nombreInput);
-    Cliente clienteApellido = clienteService.findByApellido(apellidoInput);
+    //Cliente clienteNombre = clienteService.findByNombre(nombreInput);
+    //Cliente clienteApellido = clienteService.findByApellido(apellidoInput);
 
 
     if (clienteExistente != null) {

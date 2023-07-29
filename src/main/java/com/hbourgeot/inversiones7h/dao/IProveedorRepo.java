@@ -1,5 +1,6 @@
 package com.hbourgeot.inversiones7h.dao;
 
+import com.hbourgeot.inversiones7h.entities.Cliente;
 import com.hbourgeot.inversiones7h.entities.Producto;
 import com.hbourgeot.inversiones7h.entities.Proveedor;
 import org.springframework.data.repository.CrudRepository;
@@ -11,6 +12,10 @@ import java.util.Optional;
 public interface IProveedorRepo extends CrudRepository<Proveedor, Long> {
   @Override
   <S extends Proveedor> S save(S entity);
+
+  // Método para buscar un proveedor por su cédula de identidad
+
+  Optional<Proveedor> findByCedulaIdentidad(String cedula);
 
   @Override
   <S extends Proveedor> Iterable<S> saveAll(Iterable<S> entities);

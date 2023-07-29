@@ -18,6 +18,12 @@ public class ProductoService implements IProductoService {
       Optional<Producto> productoOptional = productoRepo.findByNombre(nombre);
       return productoOptional.orElse(null); 
   }
+  
+  public Producto findByCodigo(String codigo) {
+      Optional<Producto> productoOptional = productoRepo.findByCodigo(codigo);
+      return productoOptional.orElse(null); 
+  }
+
 
   @Autowired
   private IProductoRepo repo;
