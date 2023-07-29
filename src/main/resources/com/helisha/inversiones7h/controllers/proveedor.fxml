@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.ProveedoresController">
    <children>
       <Label layoutX="514.0" layoutY="74.0" text="Registro de proveedor">
          <font>
@@ -58,7 +58,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="223.0" layoutY="141.0" text="Nombre:">
+            <Label layoutX="223.0" layoutY="129.0" text="Nombre:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -79,7 +79,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="208.0" layoutY="230.0" text="Catergoria:">
+            <Label layoutX="211.0" layoutY="280.0" text="Categoria:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -100,7 +100,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="210.0" layoutY="305.0" text="Ubicación:">
+            <Label layoutX="210.0" layoutY="354.0" text="Ubicación:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -131,27 +131,49 @@
                   <Image url="@../3566580.png" />
                </image>
             </ImageView>
-            <MFXButton fx:id="registrarBtn" layoutX="383.0" layoutY="418.0" onAction="#registrarProveedor" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
+            <MFXButton fx:id="registrarBtn" layoutX="481.0" layoutY="463.0" onAction="#registrarProveedor" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
             <MFXTextField fx:id="cedula" layoutX="336.0" layoutY="46.0" prefHeight="49.0" prefWidth="113.0">
                <textFill>
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField fx:id="nombre" layoutX="336.0" layoutY="130.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField fx:id="nombre" layoutX="336.0" layoutY="118.0" prefHeight="49.0" prefWidth="113.0">
                <textFill>
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField fx:id="categoria" layoutX="336.0" layoutY="219.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField fx:id="categoria" layoutX="336.0" layoutY="269.0" prefHeight="49.0" prefWidth="113.0">
                <textFill>
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField fx:id="ubicacion" layoutX="336.0" layoutY="293.0" prefHeight="49.0" prefWidth="113.0">
+            <MFXTextField fx:id="ubicacion" layoutX="336.0" layoutY="343.0" prefHeight="49.0" prefWidth="113.0">
                <textFill>
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
+            <Label layoutX="223.0" layoutY="206.0" text="Apellido:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MFXTextField layoutX="336.0" layoutY="195.0" prefHeight="49.0" prefWidth="113.0" />
          </children>
       </Pane>
    </children>
