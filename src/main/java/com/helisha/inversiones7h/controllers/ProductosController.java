@@ -7,18 +7,24 @@ import com.helisha.inversiones7h.entities.Producto;
 import com.helisha.inversiones7h.entities.Proveedor;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXSpinner;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.models.spinner.IntegerSpinnerModel;
 import io.github.palexdev.materialfx.controls.models.spinner.SpinnerModel;
+import io.github.palexdev.materialfx.utils.others.FunctionalStringConverter;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+
+import org.apache.el.lang.FunctionMapperImpl.Function;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -35,10 +41,10 @@ public class ProductosController implements BootInitializable {
   private FxWeaver fxWeaver;
 
   @Autowired
-  private ProductoService ProductoService;
+  private ProductoService productoService;
 
   @Autowired
-  private ProveedorService ProveedorService;
+  private ProveedorService proveedorService;
   
   @FXML
   private MFXSpinner<Integer> cantidadSpinner;
@@ -56,7 +62,7 @@ public class ProductosController implements BootInitializable {
   int currentValue;
 
   @FXML
-  private MFXTextField proveedorField;
+  private MFXComboBox<Proveedor> proveedorField;
 
   @FXML
   private MFXButton registrarBtn;
@@ -69,6 +75,16 @@ public class ProductosController implements BootInitializable {
     SpinnerModel<Integer> spinnerModel = new IntegerSpinnerModel();
     spinnerModel.setValue(0);
     cantidadSpinner.setSpinnerModel(spinnerModel);
+
+    //añadimos valores al combobox
+    proveedorField.getItems().setAll(FXCollections.observableArrayList(proveedorService.findAll()));
+
+    //añadimos un formateador 
+   StringConverter<Proveedor>formateador = FunctionalStringConverter.to(proveedor -> (proveedor == nul)?"": "Cedula:"+ proveedor.getCedulaIndentidad()+ "-" + "Nombre:" + proveedor.getNombre()+" " + proveedor.getApellido());
+
+   //añadimos formateador 
+   proveedorField.setConverter(formateador);
+
   }
 
   @Override
@@ -102,7 +118,7 @@ public class ProductosController implements BootInitializable {
     String codigoInput = codigoField.getText();
     String precioInput = precio.getText();
     Integer cantidadInput = cantidadSpinner.getValue();
-    String proveedorNombre = proveedorField.getText();
+    Proveedor proveedor = proveedorField.getValue();
 
   // Realiza las validaciones de los campos de que no existan
 
@@ -113,17 +129,17 @@ public class ProductosController implements BootInitializable {
     }
 // Obtenemos el Proveedor desde la base de datos filtrado por nombre
 
-    Proveedor proveedor  = ProveedorService.findByNombre(proveedorNombre);
+    Proveedor proveedorBuscado  = proveedorService.findByNombre(proveedor.getNombre());
 
     // Verificar si se encontró el proveedor
-    if (proveedor == null) {
+    if (proveedorBuscado == null) {
     mostrarAlertaError("Error de registro", "Proveedor no encontrado", "El proveedor ingresado no existe en la base de datos.");
     return;
 }
 
 //verificamos si producto ya existe 
 
-    Producto productoExiste = ProductoService.findByCodigo(codigoInput);
+    Producto productoExiste = productoService.findByCodigo(codigoInput);
     
     if(productoExiste != null){
       mostrarAlertaError("Error de registro", "Producto ya registrado", "El producto ya fue ingresado en la base de datos.");
@@ -138,7 +154,7 @@ public class ProductosController implements BootInitializable {
       producto.setPrecio(null);
       producto.setCantidad(cantidadInput.longValue());
 
-    ProductoService.save(producto);
+    productoService.save(producto);
 
     // Limpia los campos de entrada después de registrar el producto
 

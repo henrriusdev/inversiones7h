@@ -10,10 +10,13 @@ import org.springframework.stereotype.Component;
 
 import com.helisha.inversiones7h.BootInitializable;
 import com.helisha.inversiones7h.entities.Proveedor;
+import com.helisha.inversiones7h.entities.Proveedor.Categoria;
 import com.helisha.inversiones7h.services.ProveedorService;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -33,7 +36,7 @@ public class ProveedoresController implements BootInitializable  {
   private FxWeaver fxWeaver;
 
   @Autowired
-  private ProveedorService ProveedorService;
+  private ProveedorService proveedorService;
 
   @FXML
   private MFXTextField cedula;
@@ -45,7 +48,7 @@ public class ProveedoresController implements BootInitializable  {
   private MFXTextField apellido;
 
   @FXML
-  private MFXTextField categoria;
+  private MFXComboBox<Categoria> categoria;
 
   @FXML
   private MFXTextField ubicacion;
@@ -77,6 +80,8 @@ public class ProveedoresController implements BootInitializable  {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+      categoria.getItems().setAll(FXCollections.observableArrayList(Categoria.values()));
         
     }
 
@@ -91,12 +96,12 @@ public class ProveedoresController implements BootInitializable  {
         String cedulaInput = cedula.getText();
         String nombreInput = nombre.getText();
         String apellidoInput = apellido.getText();
-        String categoriaInput = categoria.getText();
+        Categoria categoriaInput = categoria.getValue();
         String ubicacionInput = ubicacion.getText();
 
         // Realiza las validaciones de los campos de que no existan
 
-    if(cedulaInput.isEmpty() || nombreInput.isEmpty()||apellidoInput.isEmpty() ||categoriaInput.isEmpty()|| ubicacionInput.isEmpty()){
+    if(cedulaInput.isEmpty() || nombreInput.isEmpty()||apellidoInput.isEmpty() || ubicacionInput.isEmpty()){
 
         mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el proveedor.");
           return;
@@ -104,7 +109,7 @@ public class ProveedoresController implements BootInitializable  {
 
       //verificamos si ya se registro ese proveedor
 
-      Proveedor proveedorExiste = ProveedorService.findByCedulaIdentidad(cedulaInput);
+      Proveedor proveedorExiste = proveedorService.findByCedulaIdentidad(cedulaInput);
 
 
       if(proveedorExiste != null){
@@ -119,10 +124,10 @@ public class ProveedoresController implements BootInitializable  {
       proveedor.setCedulaIdentidad(cedulaInput);
       proveedor.setNombre(nombreInput);
       proveedor.setApellido(apellidoInput);
-      proveedor.setCategoria(Proveedor.Categoria.Accesorios);
+      proveedor.setCategoria(categoriaInput);
       proveedor.setUbicacion(ubicacionInput);
 
-      ProveedorService.save(proveedor);
+      proveedorService.save(proveedor);
 
       //limpiamos campos 
 
