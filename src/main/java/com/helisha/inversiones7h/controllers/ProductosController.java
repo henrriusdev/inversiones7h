@@ -81,7 +81,7 @@ public class ProductosController implements BootInitializable {
     proveedorField.getItems().setAll(FXCollections.observableArrayList(proveedorService.findAll()));
 
     //añadimos un formateador 
-   StringConverter<Proveedor>formateador = FunctionalStringConverter.to(proveedor -> (proveedor == nul)?"": "Cedula:"+ proveedor.getCedulaIndentidad()+ "-" + "Nombre:" + proveedor.getNombre()+" " + proveedor.getApellido());
+   StringConverter<Proveedor>formateador = FunctionalStringConverter.to(proveedor -> (proveedor == null)?"": "Cedula:"+ proveedor.getCedulaIndentidad()+ "-" + "Nombre:" + proveedor.getNombre()+" " + proveedor.getApellido());
 
    //añadimos formateador 
    proveedorField.setConverter(formateador);
@@ -162,6 +162,8 @@ public class ProductosController implements BootInitializable {
     nombreField.clear();
     codigoField.clear();
     cantidadSpinner.setValue(0);
+    precio.clear();
+    proveedorField.clear();
 
     // Muestra un mensaje de éxito
     mostrarAlertaExito("Éxito", "Producto registrado exitosamente");
