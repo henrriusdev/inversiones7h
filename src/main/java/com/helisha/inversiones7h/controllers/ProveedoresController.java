@@ -38,9 +38,11 @@ public class ProveedoresController implements BootInitializable  {
   @FXML
   private MFXTextField cedula;
 
-
   @FXML
   private MFXTextField nombre;
+
+  @FXML
+  private MFXTextField apellido;
 
   @FXML
   private MFXTextField categoria;
@@ -88,14 +90,15 @@ public class ProveedoresController implements BootInitializable  {
         
         String cedulaInput = cedula.getText();
         String nombreInput = nombre.getText();
+        String apellidoInput = apellido.getText();
         String categoriaInput = categoria.getText();
         String ubicacionInput = ubicacion.getText();
 
         // Realiza las validaciones de los campos de que no existan
 
-    if(cedulaInput.isEmpty() || nombreInput.isEmpty()|| categoriaInput.isEmpty()|| ubicacionInput.isEmpty()){
+    if(cedulaInput.isEmpty() || nombreInput.isEmpty()||apellidoInput.isEmpty() ||categoriaInput.isEmpty()|| ubicacionInput.isEmpty()){
 
-        mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
+        mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el proveedor.");
           return;
       }
 
@@ -115,6 +118,7 @@ public class ProveedoresController implements BootInitializable  {
 
       proveedor.setCedulaIdentidad(cedulaInput);
       proveedor.setNombre(nombreInput);
+      proveedor.setApellido(apellidoInput);
       proveedor.setCategoria(Proveedor.Categoria.Accesorios);
       proveedor.setUbicacion(ubicacionInput);
 
@@ -124,8 +128,9 @@ public class ProveedoresController implements BootInitializable  {
 
     cedula.setText("");
     nombre.setText("");
-    ubicacion.clear();
-    categoria.clear();
+    apellido.setText("");
+    ubicacion.setText("");
+    categoria.setText("");
 
     // Muestra un mensaje de éxito
   mostrarAlertaExito("Éxito", "Proveedor registrado exitosamente");

@@ -9,6 +9,7 @@
             "projectName": "inversiones7h",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
-        }
+        },
+        
     ]
 }
