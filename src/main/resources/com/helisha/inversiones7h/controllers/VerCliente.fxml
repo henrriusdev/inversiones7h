@@ -187,7 +187,7 @@
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
             <MFXButton fx:id="editarClienteBtn" layoutX="228.0" layoutY="495.0" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #a95ef8; -fx-font-size: 18px; -fx-text-fill: #ffffff;" text="Editar Cliente" />
-            <MFXPaginatedTableView fx:id="tablaClientes" layoutX="552.0" layoutY="34.0" prefHeight="546.0" prefWidth="702.0" rowsPerPage="10" style="-fx-background-color: #a95ef8;" />
+            <MFXPaginatedTableView fx:id="tablaClientes" layoutX="552.0" layoutY="34.0" prefHeight="546.0" prefWidth="702.0" rowsPerPage="10" />
          </children>
       </Pane>
    </children>
