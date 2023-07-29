@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.ProveedoresController">
+   <children>
+      <Label layoutX="514.0" layoutY="74.0" text="Registro de proveedor">
+         <font>
+            <Font name="SansSerif Regular" size="33.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="105.0" layoutY="135.0" prefHeight="546.0" prefWidth="1094.0">
+         <children>
+            <Label layoutX="130.0" layoutY="57.0" text="Cédula de Identidad:">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="223.0" layoutY="141.0" text="Nombre:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="208.0" layoutY="230.0" text="Catergoria:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="210.0" layoutY="305.0" text="Ubicación:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="270.0" fitWidth="270.0" layoutX="678.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../3321752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="96.0" fitWidth="87.0" layoutX="948.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../3566580.png" />
+               </image>
+            </ImageView>
+            <MFXButton fx:id="registrarBtn" layoutX="383.0" layoutY="418.0" onAction="#registrarProveedor" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Registrar" />
+            <MFXTextField fx:id="cedula" layoutX="336.0" layoutY="46.0" prefHeight="49.0" prefWidth="113.0">
+               <textFill>
+                  <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+            <MFXTextField fx:id="nombre" layoutX="336.0" layoutY="130.0" prefHeight="49.0" prefWidth="113.0">
+               <textFill>
+                  <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+            <MFXTextField fx:id="categoria" layoutX="336.0" layoutY="219.0" prefHeight="49.0" prefWidth="113.0">
+               <textFill>
+                  <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+            <MFXTextField fx:id="ubicacion" layoutX="336.0" layoutY="293.0" prefHeight="49.0" prefWidth="113.0">
+               <textFill>
+                  <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

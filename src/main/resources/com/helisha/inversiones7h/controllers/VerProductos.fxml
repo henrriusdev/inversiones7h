@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.VerProductoController">
+   <children>
+      <Label layoutX="473.0" layoutY="38.0" text="Productos Registrados">
+         <font>
+            <Font name="SansSerif Regular" size="33.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="-1.0" layoutY="92.0" prefHeight="629.0" prefWidth="1280.0">
+         <children>
+            <MFXListView layoutX="419.0" layoutY="6.0" prefHeight="623.0" prefWidth="861.0" />
+            <Label layoutX="99.0" layoutY="58.0" text="Codigo:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="91.0" layoutY="141.0" text="Nombre:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="75.0" layoutY="227.0" text="Proveedor:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="89.0" layoutY="299.0" text="Cantidad:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="86.0" layoutY="382.0" text="Categoria:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="85.0" layoutY="468.0" text="Ubicacion:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MFXButton layoutX="81.0" layoutY="542.0" prefHeight="46.0" prefWidth="249.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Editar Producto" />
+            <MFXTextField layoutX="185.0" layoutY="47.0" prefHeight="49.0" prefWidth="156.0" />
+            <MFXTextField layoutX="185.0" layoutY="130.0" prefHeight="49.0" prefWidth="156.0" />
+            <MFXTextField layoutX="185.0" layoutY="216.0" prefHeight="49.0" prefWidth="156.0" />
+            <MFXTextField layoutX="185.0" layoutY="288.0" prefHeight="49.0" prefWidth="156.0" />
+            <MFXTextField layoutX="185.0" layoutY="371.0" prefHeight="49.0" prefWidth="156.0" />
+            <MFXTextField layoutX="185.0" layoutY="457.0" prefHeight="49.0" prefWidth="156.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

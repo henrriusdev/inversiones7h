@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.SobreController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1777.0" prefWidth="1278.0" style="-fx-background-color: #fff;">
+      <children>
+        <Label layoutX="327.0" layoutY="23.0" prefHeight="63.0" prefWidth="366.0" text="Acerca de la empresa">
+          <font>
+            <Font name="System Bold Italic" size="36.0" />
+          </font>
+          <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+              <stops>
+                <Stop>
+                  <color>
+                    <Color red="0.22536000609397888" green="0.12240000069141388" blue="0.36000001430511475" opacity="0.8702290058135986" />
+                  </color>
+                </Stop>
+                <Stop offset="1.0">
+                  <color>
+                    <Color red="0.6941176652908325" green="0.38823530077934265" blue="1.0" />
+                  </color>
+                </Stop>
+              </stops>
+            </RadialGradient>
+          </textFill>
+        </Label>
+        <VBox alignment="CENTER" layoutY="86.0" prefHeight="344.0" prefWidth="645.0" style="-fx-background-color: #b163ff;">
+          <children>
+            <Label prefHeight="63.0" prefWidth="237.0" text="¿Quiénes somos?" textFill="WHITE">
+              <font>
+                <Font name="System Italic" size="30.0" />
+              </font>
+            </Label>
+            <Label prefHeight="246.0" prefWidth="564.0" text="Somos una empresa líder en el sector de la moda que se especializa en la compra de productos a distribuidores cuidadosamente seleccionados y posteriormente los vende a precios competitivos. Con una visión centrada en la calidad, la variedad y los precios asequibles, Inversiones 7H ha logrado posicionarse como una referencia en el mercado de la moda para hombres, mujeres y niños." textFill="WHITE" wrapText="true">
+              <font>
+                <Font name="System Italic" size="19.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+        <VBox alignment="CENTER" layoutX="569.0" layoutY="430.0" prefHeight="348.0" prefWidth="696.0" style="-fx-background-color: #b163ff;">
+          <children>
+            <Label prefHeight="265.0" prefWidth="564.0" text="Con una amplia red de proveedores y una sólida experiencia en el sector, Inversiones 7H se enorgullece de ofrecer una amplia gama de ropa de alta calidad que satisface las necesidades de todos los miembros de la familia. Desde prendas de vestir elegantes para ocasiones especiales hasta opciones cómodas y casuales para el día a día, la empresa cuenta con un catálogo diverso y en constante actualización." textFill="WHITE" wrapText="true">
+              <font>
+                <Font name="System Italic" size="19.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+        <AnchorPane layoutY="778.0" prefHeight="633.0" prefWidth="1280.0" style="-fx-background-color: #7a0ed9;">
+          <children>
+            <Label layoutX="251.0" layoutY="33.0" prefHeight="63.0" prefWidth="521.0" text="¿Qué nos distingue de la competencia?" textFill="WHITE">
+              <font>
+                <Font name="System Italic" size="30.0" />
+              </font>
+            </Label>
+            <Label layoutX="512.0" layoutY="139.0" prefHeight="209.0" prefWidth="726.0" text="Lo que distingue a Inversiones 7H de sus competidores es su enfoque en obtener los mejores precios en el mercado. A través de sólidas relaciones con los distribuidores y la capacidad de identificar oportunidades de compra estratégicas, la empresa puede adquirir productos de calidad a precios preferenciales. Estos ahorros se trasladan a los clientes, permitiéndoles acceder a prendas de moda a precios más bajos que los ofrecidos por la competencia." textFill="WHITE" wrapText="true">
+              <font>
+                <Font name="System Italic" size="19.0" />
+              </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="380.0" prefHeight="210.0" prefWidth="713.0" text="Además de ofrecer productos de alta calidad a precios competitivos, Inversiones 7H se compromete a brindar un excelente servicio al cliente. El equipo de atención al cliente está capacitado para asesorar a los clientes en la selección de prendas y proporcionar recomendaciones personalizadas en función de sus preferencias y necesidades." textFill="WHITE" wrapText="true">
+              <font>
+                <Font name="System Italic" size="19.0" />
+              </font>
+            </Label>
+            <ImageView fitHeight="343.0" fitWidth="267.0" layoutX="66.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../wormens2.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="273.0" fitWidth="199.0" layoutX="949.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../womens1.png" />
+              </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
+        <AnchorPane layoutY="1411.0" prefHeight="364.0" prefWidth="640.0" style="-fx-background-color: #be10ff;">
+          <children>
+            <Label layoutX="277.0" layoutY="14.0" prefHeight="63.0" prefWidth="87.0" text="Misión" textFill="WHITE">
+              <font>
+                <Font name="System Italic" size="30.0" />
+              </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="85.0" prefHeight="211.0" prefWidth="608.0" text="Proporcionar a nuestros clientes ropa de alta calidad para hombres, mujeres y niños a precios competitivos. Nos esforzamos por establecer relaciones sólidas con distribuidores confiables y adquirir productos de moda que cumplan con los estándares más exigentes. Buscamos constantemente la excelencia en servicio al cliente, brindando una experiencia de compra conveniente y satisfactoria." textFill="WHITE" wrapText="true">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <AnchorPane layoutX="639.0" layoutY="1411.0" prefHeight="364.0" prefWidth="640.0" style="-fx-background-color: #970ccc;">
+          <children>
+            <Label layoutX="277.0" layoutY="14.0" prefHeight="63.0" prefWidth="86.0" text="Visión" textFill="WHITE">
+              <font>
+                <Font name="System Italic" size="30.0" />
+              </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="94.0" prefHeight="248.0" prefWidth="613.0" text="Ser reconocidos como líderes en el mercado de la moda, destacándonos por nuestra capacidad para ofrecer ropa de alta calidad a precios más bajos que la competencia. Buscamos expandir nuestro alcance y consolidar nuestra presencia en el sector mediante la ampliación de nuestra red de distribuidores confiables y la continua actualización de nuestro catálogo de productos. Aspiramos a ser una empresa innovadora y respetada, siendo reconocidos por nuestra integridad, calidad y compromiso con la satisfacción del cliente" textFill="WHITE" wrapText="true">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <ImageView fitHeight="317.0" fitWidth="304.0" layoutX="876.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../shopping.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="338.0" fitWidth="345.0" layoutX="138.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../friends.png" />
+          </image>
+        </ImageView>
+      </children></AnchorPane>
+  </content>
+</ScrollPane>

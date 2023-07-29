@@ -10,9 +10,6 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
-
-        
-
         <dependency>
             <groupId>fr.brouillard.oss</groupId>
             <artifactId>cssfx</artifactId>
@@ -117,15 +114,17 @@
                 <version>3.8.0</version>
                 <configuration>
                     <release>11</release>
+                    <source>15</source>
+                    <target>15</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.hbourgeot.inversiones7h.MainApp</mainClass>
+                    <mainClass>com.helisha.inversiones7h.SpringApp</mainClass>
                     <jvmArguments>
-                        --module-path C:\Users\elibe\Desktop\javaFX\openjfx-17.0.7_windows-x64_bin-sdk\javafx-sdk-17.0.7\lib --add-modules javafx.controls,javafx.fxml
+                        --module-path C:\Users\Admin\Downloads\openjfx-20.0.1_windows-x64_bin-sdk\javafx-sdk-20.0.1\lib --add-modules javafx.controls,javafx.fxml
                     </jvmArguments>
                 </configuration>
             </plugin>

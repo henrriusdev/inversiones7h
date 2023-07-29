@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.VerClienteController">
+   <children>
+      <Label layoutX="518.0" layoutY="50.0" text="Clientes registrados">
+         <font>
+            <Font name="SansSerif Regular" size="33.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutY="116.0" prefHeight="606.0" prefWidth="1280.0">
+         <children>
+            <Label layoutX="199.0" layoutY="76.0" text="Cedula:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="194.0" layoutY="166.0" text="Nombre:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="193.0" layoutY="253.0" text="Apellido:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="191.0" layoutY="318.0" text="Telefono:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="189.0" layoutY="409.0" text="Direccion:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <MFXListView id="custList" fx:id="listaClientes" layoutX="640.0" layoutY="5.0" prefHeight="570.0" prefWidth="590.0" style="-fx-background-size: 18px;" stylesheets="@../css/ListViews.css" />
+            <MFXTextField fx:id="cedulaInput" floatMode="DISABLED" layoutX="284.0" layoutY="65.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
+               <textFill>
+                  <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField fx:id="nombreInput" floatMode="DISABLED" layoutX="288.0" layoutY="155.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
+               <textFill>
+                  <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField fx:id="apellidoInput" floatMode="DISABLED" layoutX="284.0" layoutY="242.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
+               <textFill>
+                  <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField fx:id="telefonoInput" floatMode="DISABLED" layoutX="279.0" layoutY="307.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
+               <textFill>
+                  <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXTextField fx:id="direccionInput" floatMode="DISABLED" layoutX="279.0" layoutY="398.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="256">
+               <textFill>
+                  <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXButton fx:id="editarClienteBtn" layoutX="228.0" layoutY="495.0" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #a95ef8; -fx-font-size: 18px; -fx-text-fill: #ffffff;" text="Editar Cliente" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

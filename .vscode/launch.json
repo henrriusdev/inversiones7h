@@ -5,7 +5,7 @@
             "name": "Spring Boot-SpringApp<inversiones7h>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.hbourgeot.inversiones7h.SpringApp",
+            "mainClass": "com.helisha.inversiones7h.SpringApp",
             "projectName": "inversiones7h",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
