@@ -2,7 +2,10 @@ package com.hbourgeot.inversiones7h.controllers;
 
 import com.hbourgeot.inversiones7h.BootInitializable;
 import com.hbourgeot.inversiones7h.services.ProductoService;
+import com.hbourgeot.inversiones7h.services.ProveedorService;
 import com.hbourgeot.inversiones7h.entities.Producto;
+import com.hbourgeot.inversiones7h.entities.Proveedor;
+
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXSpinner;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -33,6 +36,9 @@ public class ProductosController implements BootInitializable {
 
   @Autowired
   private ProductoService ProductoService;
+
+  @Autowired
+  private ProveedorService ProveedorService;
   
   @FXML
   private MFXSpinner<Integer> cantidadSpinner;
@@ -91,6 +97,7 @@ public class ProductosController implements BootInitializable {
     String nombreInput = nombreField.getText();
     String codigoInput = codigoField.getText();
     Integer cantidadInput = cantidadSpinner.getValue();
+    String proveedorNombre = proveedorField.getText();
 
   // Realiza las validaciones de los campos de que no existan
 
@@ -99,6 +106,15 @@ public class ProductosController implements BootInitializable {
       mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
         return;
     }
+// Obtenemos el Proveedor desde la base de datos filtrado por nombre
+
+    Proveedor proveedor  = ProveedorService.findByNombre(proveedorNombre);
+
+    // Verificar si se encontró el proveedor
+    if (proveedor == null) {
+    mostrarAlertaError("Error de registro", "Proveedor no encontrado", "El proveedor ingresado no existe en la base de datos.");
+    return;
+}
 
 // agregamos el producto si todas las validaciones son correctas
     Producto producto = new Producto();

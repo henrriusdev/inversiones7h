@@ -21,8 +21,6 @@ public class ProveedorService implements IProveedorService{
       return proveedorOptional.orElse(null); 
   }
   
-  
-  
   @Autowired
   public IProveedorRepo repo;
 

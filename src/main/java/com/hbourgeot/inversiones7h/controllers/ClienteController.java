@@ -94,6 +94,20 @@ public class ClienteController implements BootInitializable {
       return;
     }
 
+
+    // Verificar si el cliente ya existe en la base de datos
+    Cliente clienteExistente = clienteService.findByCedulaIdentidad(cedulaInput);
+
+    //buscamos cliente por nombre y apellido
+    Cliente clienteNombre = clienteService.findByNombre(nombreInput);
+    Cliente clienteApellido = clienteService.findByApellido(apellidoInput);
+
+
+    if (clienteExistente != null) {
+        mostrarAlertaError("Error de registro", "Cliente ya registrado", "El cliente con la cédula ingresada ya está registrado en la base de datos.");
+        return;
+    }
+
     // Si pasa todas las validaciones, crea el nuevo cliente y guarda en la base de datos
     Cliente nuevoCliente = new Cliente();
 
