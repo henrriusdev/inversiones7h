@@ -30,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -116,13 +117,13 @@ public class ProductosController implements BootInitializable {
 
     String nombreInput = nombreField.getText();
     String codigoInput = codigoField.getText();
-    String precioInput = precio.getText();
+    BigDecimal precioInput = BigDecimal.valueOf(Double.parseDouble(precio.getText()));
     Integer cantidadInput = cantidadSpinner.getValue();
     Proveedor proveedor = proveedorField.getValue();
 
   // Realiza las validaciones de los campos de que no existan
 
-    if(nombreInput.isEmpty()|| codigoInput.isEmpty()|| precioInput.isEmpty()|| cantidadInput.equals(0)){
+    if(nombreInput.isEmpty()|| codigoInput.isEmpty()|| precioInput == BigDecimal.valueOf(0)|| cantidadInput.equals(0)){
 
       mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
         return;
@@ -151,7 +152,7 @@ public class ProductosController implements BootInitializable {
 
       producto.setCodigo(codigoInput);
       producto.setNombre(nombreInput);
-      producto.setPrecio(null);
+      producto.setPrecio(precioInput);
       producto.setCantidad(cantidadInput.longValue());
 
     productoService.save(producto);
