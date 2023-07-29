@@ -170,7 +170,7 @@
                </textFill>
             </Label>
             <MFXTextField fx:id="apellido" layoutX="336.0" layoutY="195.0" prefHeight="49.0" prefWidth="113.0" />
-            <MFXComboBox fx:id="categoria" layoutX="334.0" layoutY="274.0" />
+            <MFXComboBox fx:id="categoria" layoutX="336.0" layoutY="274.0" prefHeight="49.0" prefWidth="103.0" />
          </children>
       </Pane>
    </children>

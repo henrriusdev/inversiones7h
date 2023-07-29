@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+
+import org.apache.el.lang.FunctionMapperImpl.Function;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -153,7 +155,7 @@ public class ProductosController implements BootInitializable {
       producto.setPrecio(null);
       producto.setCantidad(cantidadInput.longValue());
 
-    ProductoService.save(producto);
+    productoService.save(producto);
 
     // Limpia los campos de entrada después de registrar el producto
 
