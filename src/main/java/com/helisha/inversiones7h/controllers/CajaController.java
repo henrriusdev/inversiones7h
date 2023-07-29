@@ -162,7 +162,7 @@ public class CajaController implements BootInitializable {
 
     verClienteBtn.setOnAction(event -> {
       VerClienteController verClienteController = applicationContext.getBean(VerClienteController.class);
-      verClienteController.recargarLista();
+      verClienteController.recargarTabla();
       contentPane.getChildren().setAll(verCliente);
       // cuando se haga click, mostraremos la vista de productos
     });
