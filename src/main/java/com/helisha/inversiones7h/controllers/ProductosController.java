@@ -49,6 +49,10 @@ public class ProductosController implements BootInitializable {
   @FXML
   private MFXTextField codigoField;
 
+  @FXML
+  private MFXTextField precio;
+
+
   int currentValue;
 
   @FXML
@@ -96,12 +100,13 @@ public class ProductosController implements BootInitializable {
 
     String nombreInput = nombreField.getText();
     String codigoInput = codigoField.getText();
+    String precioInput = precio.getText();
     Integer cantidadInput = cantidadSpinner.getValue();
     String proveedorNombre = proveedorField.getText();
 
   // Realiza las validaciones de los campos de que no existan
 
-    if(nombreInput.isEmpty()|| codigoInput.isEmpty()|| cantidadInput.equals(0)){
+    if(nombreInput.isEmpty()|| codigoInput.isEmpty()|| precioInput.isEmpty()|| cantidadInput.equals(0)){
 
       mostrarAlertaError("Error de registro", "Todos los campos son obligatorios", "Por favor, complete todos los campos antes de registrar el cliente.");
         return;
@@ -130,6 +135,7 @@ public class ProductosController implements BootInitializable {
 
       producto.setCodigo(codigoInput);
       producto.setNombre(nombreInput);
+      producto.setPrecio(null);
       producto.setCantidad(cantidadInput.longValue());
 
     ProductoService.save(producto);
