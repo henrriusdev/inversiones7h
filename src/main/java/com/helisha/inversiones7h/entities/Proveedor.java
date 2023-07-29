@@ -24,6 +24,9 @@ public class Proveedor implements Serializable {
   @Column(nullable = false, length = 150)
   private String nombre;
 
+  @Column(nullable = false, length = 150)
+  private String apellido;
+
   @Column(nullable = false)
   private String ubicacion;
 
@@ -44,6 +47,14 @@ public class Proveedor implements Serializable {
 
   public void setNombre(String nombre) {
     this.nombre = nombre;
+  }
+
+  public String getApellido() {
+    return apellido;
+  }
+
+  public void setApellido(String apellido) {
+    this.apellido = apellido;
   }
 
   public String getUbicacion() {
