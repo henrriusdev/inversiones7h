@@ -173,7 +173,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXTextField layoutX="336.0" layoutY="195.0" prefHeight="49.0" prefWidth="113.0" />
+            <MFXTextField fx:id="apellido" layoutX="336.0" layoutY="195.0" prefHeight="49.0" prefWidth="113.0" />
          </children>
       </Pane>
    </children>
