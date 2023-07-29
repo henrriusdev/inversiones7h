@@ -18,11 +18,13 @@ import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.Objects;
+
 public class MainApp extends Application {
 	private ConfigurableApplicationContext context;
 
 	@Override
-	public void init() throws Exception{
+	public void init() {
 		String[] args = getParameters().getRaw().toArray(new String[0]);
 
 		this.context = new SpringApplicationBuilder().sources(SpringApp.class).run(args);
@@ -36,7 +38,7 @@ public class MainApp extends Application {
 			);
 	}
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage stage) {
 		FxWeaver fxWeaver = context.getBean(FxWeaver.class);
 		Parent root = fxWeaver.loadView(LoginViewController.class);
 		CSSFX.start();
@@ -46,7 +48,7 @@ public class MainApp extends Application {
 		stage.initStyle(StageStyle.TRANSPARENT);
 		stage.setTitle("Inversiones7H");
 		stage.setScene(scene);
-		stage.getIcons().add(new Image(MainApp.class.getResourceAsStream("logo.png")));
+		stage.getIcons().add(new Image(Objects.requireNonNull(MainApp.class.getResourceAsStream("logo.png"))));
 		stage.show();
 
 		LoginViewController loginViewController = context.getBean(LoginViewController.class);
