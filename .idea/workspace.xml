@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="añadido stepper para venta">
+    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProveedoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProveedoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SupervisorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VentaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerProductos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerProductos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/compra.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/compra.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/proveedor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/proveedor.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690466467770</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd">
+      <option name="closed" value="true" />
+      <created>1690696603554</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690696603554</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +398,8 @@
     <MESSAGE value="funcionando clientes" />
     <MESSAGE value="añadido puto rif" />
     <MESSAGE value="añadido stepper para venta" />
-    <option name="LAST_COMMIT_MESSAGE" value="añadido stepper para venta" />
+    <MESSAGE value="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

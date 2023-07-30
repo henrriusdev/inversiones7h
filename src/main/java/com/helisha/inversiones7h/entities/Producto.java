@@ -36,12 +36,14 @@ public class Producto implements Serializable {
     }
   }
 
+  public Proveedor getProveedorObj(){ return  proveedor; }
+
   public void setProveedor(Proveedor proveedor) {
     this.proveedor = proveedor;
   }
 
   public Long getCantidadVendida() {
-    return cantidadVendida;
+    return cantidadVendida == 0 ? 0 : cantidadVendida;
   }
 
   public void setCantidadVendida(Long cantidadVendida) {
