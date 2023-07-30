@@ -150,37 +150,50 @@ public class SupervisorController implements BootInitializable { // implementamo
 
 	// inicializar las opciones de navegación
 	private void initializeLoader() {
-		Parent compraController = fxWeaver.loadView(CompraController.class); //cargamos vista
-		Parent productosController = fxWeaver.loadView(ProductosController.class); //cargamos vista
-		Parent proveedoresController = fxWeaver.loadView(ProveedoresController.class);
-		Parent verProductosController = fxWeaver.loadView(VerProductoController.class);
+		Parent compraVista = fxWeaver.loadView(CompraController.class); //cargamos vista
+		Parent productosVista = fxWeaver.loadView(ProductosController.class); //cargamos vista
+		Parent proveedoresVista = fxWeaver.loadView(ProveedoresController.class);
+		Parent verProductosVista = fxWeaver.loadView(VerProductoController.class);
+		Parent verProveedoresVista = fxWeaver.loadView(VerProveedoresController.class);
 		Parent bienvenidaSupervisor = fxWeaver.loadView(BienvenidaSupervisorController.class);
+		Parent verComprasVista = fxWeaver.loadView(VerComprasController.class);
 
 		// creamos los botones
 		ToggleButton compraBtn = createToggle("fas-cart-shopping", "Generar Compra");
 		ToggleButton productosBtn = createToggle("fas-box", "Agregar Producto");
 		ToggleButton proveedorBtn = createToggle("fas-truck-fast", "Agregar Proveedor");
+		ToggleButton verComprasBtn = createToggle("fas-basket-shopping", "Ver Compras");
 		ToggleButton verProductosBtn = createToggle("fas-table-list", "Ver y Editar Productos");
+		ToggleButton verProveedoresBtn = createToggle("fas-truck-front", "Ver y Editar Proveedores");
 		bienvenidaBtn = createToggle("fas-house-user", "Inicio");
 
 		// eventos
 		compraBtn.setOnAction(event -> {
-			contentPane.getChildren().setAll(compraController);
+			contentPane.getChildren().setAll(compraVista);
 			// cuando se haga click, mostraremos la vista de compra
 		});
 
 		productosBtn.setOnAction(event -> {
-			contentPane.getChildren().set(0, productosController);
+			contentPane.getChildren().setAll(productosVista);
 			// cuando se haga click, mostraremos la vista de productos
 		});
 
 		proveedorBtn.setOnAction(event -> {
-			contentPane.getChildren().setAll(proveedoresController);
+			contentPane.getChildren().setAll(proveedoresVista);
 			// cuando se haga click, mostraremos la vista de productos
 		});
 
 		verProductosBtn.setOnAction(event -> {
-			contentPane.getChildren().setAll(verProductosController);
+			VerProductoController verProductoController = applicationContext.getBean(VerProductoController.class);
+			verProductoController.recargarTabla();
+			contentPane.getChildren().setAll(verProductosVista);
+			// cuando se haga click, mostraremos la vista de productos
+		});
+
+		verProveedoresBtn.setOnAction(event -> {
+			VerProveedoresController verProveedorController = applicationContext.getBean(VerProveedoresController.class);
+			verProveedorController.recargarTabla();
+			contentPane.getChildren().setAll(verProveedoresVista);
 			// cuando se haga click, mostraremos la vista de productos
 		});
 
@@ -189,12 +202,12 @@ public class SupervisorController implements BootInitializable { // implementamo
 			// cuando se haga click, mostraremos la vista de productos
 		});
 
+		verComprasBtn.setOnAction(event -> {
+			contentPane.getChildren().setAll(verComprasVista);
+		});
+
 		// añadimos al navbar
-		navBar.getChildren().add(bienvenidaBtn);
-		navBar.getChildren().add(compraBtn);
-		navBar.getChildren().add(productosBtn);
-		navBar.getChildren().add(proveedorBtn);
-		navBar.getChildren().add(verProductosBtn);
+		navBar.getChildren().addAll(bienvenidaBtn, compraBtn, productosBtn, proveedorBtn, verComprasBtn, verProductosBtn, verProveedoresBtn);
 
 		contentPane.getChildren().setAll(bienvenidaSupervisor);
 	}

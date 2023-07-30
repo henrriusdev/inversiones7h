@@ -69,6 +69,10 @@ public class Proveedor implements Serializable {
     return categoria;
   }
 
+  public String getCategoriaString() {
+    return categoria.toString();
+  }
+
   public void setCategoria(Categoria categoria) {
     this.categoria = categoria;
   }

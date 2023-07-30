@@ -28,16 +28,22 @@ public class Producto implements Serializable {
   @Transient
   private Long cantidadVendida;
 
-  public Proveedor getProveedor() {
-    return proveedor;
+  public String getProveedor() {
+    if (proveedor != null) {
+      return proveedor.getNombre() + " " + proveedor.getApellido();
+    } else {
+      return "";
+    }
   }
+
+  public Proveedor getProveedorObj(){ return  proveedor; }
 
   public void setProveedor(Proveedor proveedor) {
     this.proveedor = proveedor;
   }
 
   public Long getCantidadVendida() {
-    return cantidadVendida;
+    return cantidadVendida == 0 ? 0 : cantidadVendida;
   }
 
   public void setCantidadVendida(Long cantidadVendida) {
@@ -70,6 +76,10 @@ public class Producto implements Serializable {
 
   public BigDecimal getPrecio() {
     return precio;
+  }
+
+  public String getPrecioString() {
+    return precio.toString() + "$";
   }
 
   public void setPrecio(BigDecimal precio) {

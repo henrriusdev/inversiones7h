@@ -166,28 +166,28 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXTextField fx:id="cedulaInput" floatMode="DISABLED" layoutX="284.0" layoutY="65.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
+            <MFXTextField fx:id="cedula" allowEdit="false" editable="false" floatMode="DISABLED" layoutX="284.0" layoutY="65.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
                <textFill>
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField fx:id="nombreInput" floatMode="DISABLED" layoutX="288.0" layoutY="155.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
+            <MFXTextField fx:id="nombreCliente" floatMode="DISABLED" layoutX="288.0" layoutY="155.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
                <textFill>
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField fx:id="apellidoInput" floatMode="DISABLED" layoutX="284.0" layoutY="242.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
+            <MFXTextField fx:id="apellidoCliente" floatMode="DISABLED" layoutX="284.0" layoutY="242.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;">
                <textFill>
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField fx:id="telefonoInput" floatMode="DISABLED" layoutX="279.0" layoutY="307.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
+            <MFXTextField fx:id="telefonoCliente" floatMode="DISABLED" layoutX="279.0" layoutY="307.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="11">
                <textFill>
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXTextField fx:id="direccionInput" floatMode="DISABLED" layoutX="279.0" layoutY="398.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="256">
+            <MFXTextField fx:id="direccionCliente" floatMode="DISABLED" layoutX="279.0" layoutY="398.0" prefHeight="49.0" prefWidth="161.0" style="-fx-font-size: 18px;" textLimit="256">
                <textFill>
                   <Color red="0.6666666865348816" green="0.0235294122248888" blue="0.8627451062202454" opacity="0.8700000047683716" />
                </textFill></MFXTextField>
-            <MFXButton fx:id="editarClienteBtn" layoutX="228.0" layoutY="495.0" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #a95ef8; -fx-font-size: 18px; -fx-text-fill: #ffffff;" text="Editar Cliente" />
-            <MFXPaginatedTableView fx:id="tablaClientes" layoutX="552.0" layoutY="34.0" prefHeight="546.0" prefWidth="702.0" rowsPerPage="10" style="-fx-background-color: #a95ef8;" />
+            <MFXButton fx:id="editarClienteBtn" layoutX="228.0" layoutY="495.0" onAction="#editar" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #a95ef8; -fx-font-size: 18px; -fx-text-fill: #ffffff;" text="Editar Cliente" />
+            <MFXPaginatedTableView fx:id="tablaClientes" layoutX="552.0" layoutY="34.0" prefHeight="546.0" prefWidth="702.0" rowsPerPage="10" />
          </children>
       </Pane>
    </children>

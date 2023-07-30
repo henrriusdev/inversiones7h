@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.ProveedoresController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.ProveedoresController">
    <children>
       <Label layoutX="514.0" layoutY="74.0" text="Registro de proveedor">
          <font>
@@ -142,11 +143,6 @@
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField fx:id="categoria" layoutX="336.0" layoutY="269.0" prefHeight="49.0" prefWidth="113.0">
-               <textFill>
-                  <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
-               </textFill>
-            </MFXTextField>
             <MFXTextField fx:id="ubicacion" layoutX="336.0" layoutY="343.0" prefHeight="49.0" prefWidth="113.0">
                <textFill>
                   <Color red="0.5803921818733215" green="0.05098039284348488" blue="0.7882353067398071" opacity="0.8700000047683716" />
@@ -174,6 +170,7 @@
                </textFill>
             </Label>
             <MFXTextField fx:id="apellido" layoutX="336.0" layoutY="195.0" prefHeight="49.0" prefWidth="113.0" />
+            <MFXFilterComboBox fx:id="categoria" layoutX="334.0" layoutY="274.0" />
          </children>
       </Pane>
    </children>
