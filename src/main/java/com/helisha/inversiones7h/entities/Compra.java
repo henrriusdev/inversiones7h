@@ -32,16 +32,17 @@ public class Compra {
     this.id = id;
   }
 
-  public Producto getProducto() {
-    return producto;
+  public String getProducto() {
+    return "#" + producto.getCodigo() + " - " + producto.getNombre();
   }
 
   public void setProducto(Producto producto) {
     this.producto = producto;
   }
 
-  public Proveedor getProveedor() {
-    return proveedor;
+  public String getProveedor() {
+    return "Cédula: " + proveedor.getCedulaIndentidad() + " - " + "Nombre: " + proveedor.getNombre() + " "
+      + proveedor.getApellido();
   }
 
   public void setProveedor(Proveedor proveedor) {

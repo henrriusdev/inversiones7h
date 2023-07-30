@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
 <?import io.github.palexdev.materialfx.controls.MFXSpinner?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,7 +44,7 @@
       </Label>
       <Pane layoutX="65.0" layoutY="148.0" prefHeight="546.0" prefWidth="1170.0">
          <children>
-            <Label layoutX="118.0" layoutY="70.0" text="Producto:">
+            <Label layoutX="176.0" layoutY="62.0" text="Producto:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -76,7 +75,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="119.0" layoutY="156.0" text="Cantidad:">
+            <Label layoutX="181.0" layoutY="145.0" text="Cantidad:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -102,7 +101,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="108.0" layoutY="249.0" text="Proveedor:">
+            <Label layoutX="176.0" layoutY="235.0" text="Proveedor:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -128,7 +127,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="724.0" layoutY="169.0" text="Monto Total:">
+            <Label layoutX="157.0" layoutY="314.0" text="Monto Total:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -154,26 +153,23 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <ImageView fitHeight="254.0" fitWidth="255.0" layoutX="911.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="390.0" fitWidth="478.0" layoutX="672.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../2649288.png" />
                </image>
             </ImageView>
-            <MFXButton fx:id="registrarBtn" layoutX="394.0" layoutY="416.0" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff;" text="Comprar">
+            <MFXButton fx:id="registrarBtn" layoutX="374.0" layoutY="421.0" onAction="#registrarCompra" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #a95ef8; -fx-text-fill: #ffffff; -fx-font-size: 18px;" text="Comprar" />
+            <MFXSpinner fx:id="cantidadSpinner" graphicTextGap="0.0" layoutX="286.0" layoutY="137.0" prefHeight="43.0" prefWidth="62.0" />
+            <MFXTextField fx:id="monto" allowEdit="false" floatMode="DISABLED" layoutX="286.0" layoutY="306.0" prefHeight="43.0" prefWidth="126.0" style="-fx-font-size: 18px;">
+               <textFill>
+                  <Color red="0.2763157784938812" green="0.2763157784938812" blue="0.2763157784938812" opacity="0.8700000047683716" />
+               </textFill></MFXTextField>
+            <MFXFilterComboBox id="customFilter" fx:id="proveedor" floatMode="BORDER" floatingText="Seleccione" layoutX="286.0" layoutY="228.0" prefHeight="39.0" prefWidth="278.0" />
+            <MFXFilterComboBox id="customFilter" fx:id="producto" floatMode="BORDER" floatingText="Seleccione" layoutX="286.0" layoutY="49.0" prefHeight="39.0" prefWidth="278.0" />
+            <Label layoutX="436.0" layoutY="314.0" text="\$">
                <font>
                   <Font size="18.0" />
                </font>
-            </MFXButton>
-            <MFXTextField fx:id="id" floatMode="DISABLED" layoutX="229.0" layoutY="41.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXTextField fx:id="Producto" floatMode="DISABLED" layoutX="229.0" layoutY="123.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXTextField fx:id="proveedor" floatMode="DISABLED" layoutX="229.0" layoutY="282.0" prefHeight="43.0" prefWidth="175.0" />
-            <MFXSpinner fx:id="CantidadSpinner" graphicTextGap="0.0" layoutX="229.0" layoutY="206.0" prefHeight="43.0" prefWidth="153.0" />
-            <MFXTextField fx:id="monto" allowEdit="false" floatMode="DISABLED" layoutX="853.0" layoutY="161.0" prefHeight="43.0" prefWidth="175.0" />
-            <SplitMenuButton layoutX="430.0" layoutY="131.0" mnemonicParsing="false" text="Buscar">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -182,9 +178,9 @@
                               <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
                            </color>
                         </Stop>
-                        <Stop offset="0.051219512195121955">
+                        <Stop offset="0.006729475100942127">
                            <color>
-                              <Color />
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
@@ -195,40 +191,7 @@
                      </stops>
                   </LinearGradient>
                </textFill>
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </SplitMenuButton>
-            <SplitMenuButton layoutX="430.0" layoutY="290.0" mnemonicParsing="false" text="Buscar">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.051219512195121955">
-                           <color>
-                              <Color />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </SplitMenuButton>
+            </Label>
          </children>
       </Pane>
    </children>

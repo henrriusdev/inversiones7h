@@ -5,133 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="añadido stepper para venta">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/BienvenidaCajeroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/BienvenidaSupervisorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/BootInitializable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/BootInitializable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/SpringApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/SpringApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CajaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CajaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/LoginViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ProductosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/ProveedoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProveedoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SobreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SobreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SupervisorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/controllers/VentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VentaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/IClienteRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/IClienteRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/ICompraRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/ICompraRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/IProductoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/IProductoRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/IProveedorRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/IProveedorRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/IUserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/IUserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/dao/IVentaRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/dao/IVentaRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Compra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Proveedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/entities/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Venta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/initializers/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/initializers/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/CompraService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/CompraService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/IClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/ICompraService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ICompraService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/IProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/IProveedorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IProveedorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/IVentaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IVentaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/ProveedorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ProveedorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbourgeot/inversiones7h/services/VentaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/VentaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/2649288.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/2649288.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/3321752.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/3321752.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/3566580.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/3566580.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/5166410.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/5166410.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/7f22ea54db73af152e941f40dd72853c-ilustracion-de-compras-en-linea-de-invierno.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/7f22ea54db73af152e941f40dd72853c-ilustracion-de-compras-en-linea-de-invierno.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/BienvenidaSupervisor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/BienvenidaSupervisor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Caja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Caja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Sobre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Sobre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/Supervisor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Supervisor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/VerCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/VerProductos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerProductos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/bienvenidaCajero.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/bienvenidaCajero.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/cliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/cliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/compra.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/compra.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/productos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/proveedor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/proveedor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/controllers/venta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/venta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/ChecksRadiosToggles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/ChecksRadiosToggles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/ComboBoxes.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/ComboBoxes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/FontResources.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/FontResources.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/ListViews.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/ListViews.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/MFXColors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/MFXColors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Pickers.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Pickers.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Progress.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Progress.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Sliders.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Sliders.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/Stepper.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/Stepper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/css/TextFields.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/css/TextFields.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/de7496dc0b7cc908420efab4aee3dbe1-icono-de-trazo-de-compras-en-linea-compras-en-linea.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/de7496dc0b7cc908420efab4aee3dbe1-icono-de-trazo-de-compras-en-linea-compras-en-linea.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-BlackItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Roboto/Roboto-ThinItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Roboto/Roboto-ThinItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Varela/VarelaRound-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Varela/VarelaRound-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-DemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-DemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-Heavy.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-Heavy.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/fonts/Visby/VisbyRoundCF-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/fonts/Visby/VisbyRoundCF-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/friends.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/friends.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/logo4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/logo_alt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/logo_alt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/logo_rif.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/logo_rif.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/pngtree-cartoon-female-customer-service-professional-woman-png-free-material-png-image_7412495.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/shopping.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/shopping.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/womens1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/womens1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/hbourgeot/inversiones7h/wormens2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/wormens2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProveedoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProveedoresController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SupervisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/SupervisorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Compra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Proveedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerProductos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/VerProductos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/compra.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/compra.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/proveedor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/proveedor.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,39 +87,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;henry&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Downloads/MaterialFX-main/MaterialFX-main/demo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;c866b06dc8ae7d975c5482b201c169bf&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "henry",
+    "go.import.settings.migrated": "true",
+    "jdk.selected.JAVA_MODULE": "temurin-17",
+    "last_opened_file_path": "C:/Users/Admin/Documents/proyectos/inversiones7h/src/main/resources/com/helisha/inversiones7h/controllers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "c866b06dc8ae7d975c5482b201c169bf",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\helisha\inversiones7h\controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\hbourgeot\inversiones7h" />
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.helisha.inversiones7h.controllers" />
     </key>
   </component>
   <component name="RunDashboard">
