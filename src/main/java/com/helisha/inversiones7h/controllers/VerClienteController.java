@@ -166,7 +166,7 @@ public class VerClienteController implements BootInitializable {
 
     // Muestra un mensaje de éxito
     recargarTabla();
-    mostrarAlertaExito("Éxito", "Cliente registrado exitosamente");
+    mostrarAlertaExito("Éxito", "Cliente editado exitosamente");
   }
 
   private void mostrarAlertaError(String titulo, String header, String mensaje) {

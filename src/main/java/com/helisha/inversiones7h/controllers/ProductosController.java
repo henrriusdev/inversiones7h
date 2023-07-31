@@ -184,4 +184,9 @@ public class ProductosController implements BootInitializable {
     alert.setHeaderText(header);
     alert.showAndWait();
   }
+  public void refrescarCampos() {
+    this.proveedorField.getItems().removeAll(this.proveedorField.getItems());
+    this.proveedorField.getItems().setAll(proveedorService.findAll());
+
+  }
 }

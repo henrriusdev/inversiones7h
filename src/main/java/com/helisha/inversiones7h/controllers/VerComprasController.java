@@ -109,7 +109,7 @@ public class VerComprasController implements BootInitializable {
 
   public void generar() throws Exception {
     try {
-      JasperPrint jasperPrint = reporteService.generarReporteVentas();
+      JasperPrint jasperPrint = reporteService.generarReporteCompras();
 
       String pdfPath = System.getProperty("user.dir") + "\\inversiones-data\\reporte_compras.pdf"; // path where you want to save your pdf...
       JasperExportManager.exportReportToPdfFile(jasperPrint, pdfPath);

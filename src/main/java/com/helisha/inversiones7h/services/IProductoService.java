@@ -13,8 +13,6 @@ public interface IProductoService {
 
   List<Producto> findAll();
 
-  List<Producto> findDisponibles();
-
   long count();
 
   void delete(Producto producto);

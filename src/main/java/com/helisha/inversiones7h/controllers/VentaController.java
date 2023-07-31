@@ -76,7 +76,6 @@ public class VentaController implements BootInitializable {
 
   private final MFXPaginatedTableView<Producto> tablaProductos2;
 
-  private final MFXCheckbox checkbox;
 
   private final MFXFilterComboBox<Producto> productosCombo;
 
@@ -100,7 +99,6 @@ public class VentaController implements BootInitializable {
     tablaProductos2 = new MFXPaginatedTableView<>();
     cantidadSpinner = new MFXSpinner<>();
     montoTotal = new MFXTextField();
-    checkbox = new MFXCheckbox("Confirm Data?");
     productosVendidos = new ArrayList<>();
     monto = BigDecimal.valueOf(0);
   }
@@ -212,8 +210,6 @@ public class VentaController implements BootInitializable {
     MFXStepperToggle step3 = new MFXStepperToggle("Confirmación", new MFXFontIcon("fas-check", 16, Color.web("#85CB33")));
     Node step3Grid = createGrid();
     step3.setContent(step3Grid);
-    if (step3.getValidator() == null)
-      step3.getValidator().constraint("Los datos deben ser confirmados", checkbox.selectedProperty());
 
     return List.of(step1, step2, step3);
   }
@@ -254,7 +250,7 @@ public class VentaController implements BootInitializable {
     b2.setMaxWidth(Region.USE_PREF_SIZE);
     b3.setMaxWidth(Region.USE_PREF_SIZE);
 
-    VBox box = new VBox(10, b1, b2, b3, checkbox);
+    VBox box = new VBox(10, b1, b2, b3);
     box.setAlignment(Pos.CENTER);
 
     StackPane.setAlignment(box, Pos.CENTER);
@@ -294,8 +290,7 @@ public class VentaController implements BootInitializable {
     });
     stepper.setOnBeforePrevious(event -> {
       if (stepper.isLastToggle()) {
-        checkbox.setSelected(false);
-        box.getChildren().setAll(b1, b2, b3, checkbox);
+        box.getChildren().setAll(b1, b2, b3);
       }
     });
 
@@ -303,11 +298,14 @@ public class VentaController implements BootInitializable {
   }
 
   public void refrescarCampos() {
+    // eliminamos y recargamos los items del combobox
+    clienteCombo.getItems().removeAll(clienteCombo.getItems());
+    productosCombo.getItems().removeAll(productosCombo.getItems());
     clienteCombo.getItems().addAll(cService.findAll());
-    productosCombo.getItems().addAll(pService.findDisponibles());
+    productosCombo.getItems().addAll(pService.findAll());
   }
 
-  private MFXTextField createLabel(String text) {
+  private MFXTextField createLabel(String text) { // funcion para crear un Label
     MFXTextField label = MFXTextField.asLabel(text);
     label.setAlignment(Pos.CENTER_LEFT);
     label.setPrefWidth(200);
@@ -343,6 +341,8 @@ public class VentaController implements BootInitializable {
     montoTotal.clear();
     clienteCombo.clear();
     productosCombo.clear();
+    productosCombo.getItems().removeAll();
+    clienteCombo.getItems().removeAll();
     productosVendidos.clear();
     monto = BigDecimal.valueOf(0);
     tablaProductos.getItems().removeAll();
@@ -352,7 +352,7 @@ public class VentaController implements BootInitializable {
 
   public void generar(List<Producto> productos) throws Exception {
     try {
-      JasperPrint jasperPrint = reporteService.generarFactura(productos);
+      JasperPrint jasperPrint = reporteService.generarFactura(productos, monto);
 
       Date fechaActual = new Date();
 
