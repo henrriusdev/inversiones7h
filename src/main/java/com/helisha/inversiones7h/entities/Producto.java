@@ -43,7 +43,7 @@ public class Producto implements Serializable {
   }
 
   public Long getCantidadVendida() {
-    return cantidadVendida == 0 ? 0 : cantidadVendida;
+    return cantidadVendida;
   }
 
   public void setCantidadVendida(Long cantidadVendida) {

@@ -37,6 +37,8 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -255,5 +257,14 @@ public class CajaController implements BootInitializable {
 
     Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     currentStage.close();
+
+    VerClienteController verClienteController = applicationContext.getBean(VerClienteController.class);
+    verClienteController.restablecer();
+
+    ClienteController clienteController = applicationContext.getBean(ClienteController.class);
+    clienteController.restablecer();
+
+    VentaController ventaController = applicationContext.getBean(VentaController.class);
+    ventaController.restablecer();
   }
 }

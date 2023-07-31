@@ -147,5 +147,13 @@ public class ClienteController implements BootInitializable {
     alert.setHeaderText(header);
     alert.showAndWait();
   }
+
+  public void restablecer(){
+    nombreCliente.clear();
+    apellidoCliente.clear();
+    cedula.clear();
+    dirCliente.clear();
+    tlfCliente.clear();
+  }
     
 }

@@ -4,6 +4,7 @@ import com.helisha.inversiones7h.BootInitializable;
 import com.helisha.inversiones7h.entities.Compra;
 import com.helisha.inversiones7h.services.CompraService;
 import com.helisha.inversiones7h.services.ProveedorService;
+import com.helisha.inversiones7h.services.ReporteService;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
 import io.github.palexdev.materialfx.filter.BigDecimalFilter;
@@ -16,6 +17,8 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -38,8 +41,14 @@ public class VerComprasController implements BootInitializable {
   @Autowired
   private ProveedorService proveedorService;
 
+  @Autowired
+  private ReporteService reporteService;
+
   @FXML
   private MFXPaginatedTableView<Compra> tablaCompras;
+
+  @FXML
+  private MFXButton generarReporte;
 
   @Override
   public void initConstruct() {
@@ -76,7 +85,7 @@ public class VerComprasController implements BootInitializable {
     columnaCantidad.setRowCellFactory(producto -> new MFXTableRowCell<>(Compra::getMontoTotal));
 
     tablaCompras.getTableColumns().setAll(columnaId,columnaProducto,columnaProveedor,columnaCantidad, columnaMonto);
-    tablaCompras.setRowsPerPage(15);
+    tablaCompras.setRowsPerPage(12);
     tablaCompras.getFilters().setAll(
       new LongFilter<>("Código",Compra::getId),
       new StringFilter<>("Producto", Compra::getProducto),
@@ -96,6 +105,19 @@ public class VerComprasController implements BootInitializable {
     for (var columna : columnas){
       columna.setMinWidth(anchoTabla / 5);
     }
+  }
+
+  public void generar() throws Exception {
+    try {
+      JasperPrint jasperPrint = reporteService.generarReporteVentas();
+
+      String pdfPath = System.getProperty("user.dir") + "\\inversiones-data\\reporte_compras.pdf"; // path where you want to save your pdf...
+      JasperExportManager.exportReportToPdfFile(jasperPrint, pdfPath);
+      Runtime.getRuntime().exec("cmd /c start chrome file:///"+pdfPath);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
   }
 
   @Override

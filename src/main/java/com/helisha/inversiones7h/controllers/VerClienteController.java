@@ -184,6 +184,14 @@ public class VerClienteController implements BootInitializable {
     alert.showAndWait();
   }
 
+  public void restablecer(){
+    nombreCliente.clear();
+    apellidoCliente.clear();
+    cedula.clear();
+    direccionCliente.clear();
+    telefonoCliente.clear();
+  }
+
   @Override
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 

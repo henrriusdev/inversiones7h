@@ -11,7 +11,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="666.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.BienvenidaSupervisorController">
    <children>
-      <Label layoutX="491.0" layoutY="66.0" text="Bienvenido Supervisor ">
+      <ImageView fitHeight="720.0" fitWidth="694.0" layoutX="319.0" opacity="0.19" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="472.0" layoutY="35.0" text="Bienvenido Supervisor ">
          <font>
             <Font name="Bodoni MT" size="40.0" />
          </font>
@@ -37,10 +42,5 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="720.0" fitWidth="694.0" layoutX="319.0" opacity="0.19" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../../Downloads/logo4.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
