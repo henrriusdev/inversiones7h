@@ -44,20 +44,6 @@ public class ProductoService implements IProductoService {
   }
 
   @Override
-  public List<Producto> findDisponibles() {
-    // TODO Auto-generated method stub
-    List<Producto> productos = (List<Producto>) repo.findAll(), products = new ArrayList<>();
-
-    for (int i = 0; i < productos.size(); i++) {
-      Producto producto = productos.get(i);
-      if (producto.getCantidad() != 0) {
-        products.add(i, producto);
-      }
-    }
-    return productos;
-  }
-
-  @Override
   public long count() {
     return repo.count();
   }

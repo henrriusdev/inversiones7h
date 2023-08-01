@@ -43,6 +43,8 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
@@ -157,12 +159,14 @@ public class SupervisorController implements BootInitializable { // implementamo
 		Parent verProveedoresVista = fxWeaver.loadView(VerProveedoresController.class);
 		Parent bienvenidaSupervisor = fxWeaver.loadView(BienvenidaSupervisorController.class);
 		Parent verComprasVista = fxWeaver.loadView(VerComprasController.class);
+		Parent verVentasVista = fxWeaver.loadView(VerVentasController.class);
 
 		// creamos los botones
 		ToggleButton compraBtn = createToggle("fas-cart-shopping", "Generar Compra");
 		ToggleButton productosBtn = createToggle("fas-box", "Agregar Producto");
 		ToggleButton proveedorBtn = createToggle("fas-truck-fast", "Agregar Proveedor");
 		ToggleButton verComprasBtn = createToggle("fas-basket-shopping", "Ver Compras");
+		ToggleButton verVentasBtn = createToggle("fas-bag-shopping", "Ver Ventas");
 		ToggleButton verProductosBtn = createToggle("fas-table-list", "Ver y Editar Productos");
 		ToggleButton verProveedoresBtn = createToggle("fas-truck-front", "Ver y Editar Proveedores");
 		bienvenidaBtn = createToggle("fas-house-user", "Inicio");
@@ -203,11 +207,19 @@ public class SupervisorController implements BootInitializable { // implementamo
 		});
 
 		verComprasBtn.setOnAction(event -> {
+			VerComprasController verComprasController = applicationContext.getBean(VerComprasController.class);
+			verComprasController.recargarTabla();
 			contentPane.getChildren().setAll(verComprasVista);
 		});
 
+		verVentasBtn.setOnAction(event -> {
+			VerVentasController verVentasController = applicationContext.getBean(VerVentasController.class);
+			verVentasController.recargarTabla();
+			contentPane.getChildren().setAll(verVentasVista);
+		});
+
 		// añadimos al navbar
-		navBar.getChildren().addAll(bienvenidaBtn, compraBtn, productosBtn, proveedorBtn, verComprasBtn, verProductosBtn, verProveedoresBtn);
+		navBar.getChildren().addAll(bienvenidaBtn, compraBtn, productosBtn, proveedorBtn, verComprasBtn, verVentasBtn, verProductosBtn, verProveedoresBtn);
 
 		contentPane.getChildren().setAll(bienvenidaSupervisor);
 	}
@@ -288,5 +300,11 @@ public class SupervisorController implements BootInitializable { // implementamo
 
 		Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		currentStage.close();
+
+		AutowireCapableBeanFactory factory = applicationContext.getAutowireCapableBeanFactory();
+		if (factory instanceof ConfigurableBeanFactory) {
+			ConfigurableBeanFactory configurableFactory = (ConfigurableBeanFactory) factory;
+			configurableFactory.destroyBean("cajaController", SupervisorController.class);
+		}
 	}
 }

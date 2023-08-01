@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd">
+    <list default="true" id="3ef8733c-e129-4aff-8be6-2dc93cd72580" name="Changes" comment="SOLO FALTAN COMENTARIOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CajaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CajaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/CompraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/ProductosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VentaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/entities/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerComprasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/controllers/VerComprasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/IProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ReporteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/helisha/inversiones7h/services/ReporteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Caja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Caja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Supervisor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/Supervisor.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/helisha/inversiones7h/controllers/productos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,40 +87,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "henry",
-    "go.import.settings.migrated": "true",
-    "jdk.selected.JAVA_MODULE": "temurin-17",
-    "last_opened_file_path": "C:/Users/Admin/Documents/proyectos/inversiones7h/src/main/resources/com/helisha/inversiones7h/controllers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "c866b06dc8ae7d975c5482b201c169bf",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;henry&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Documents/proyectos/inversiones7h/src/main/resources/com/helisha/inversiones7h&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c866b06dc8ae7d975c5482b201c169bf&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\helisha\inversiones7h" />
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\helisha\inversiones7h\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\helisha\inversiones7h" />
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources\com\hbourgeot\inversiones7h" />
       <recent name="C:\Users\Admin\Documents\proyectos\inversiones7h\src\main\resources" />
     </key>
@@ -283,6 +297,10 @@
       <workItem from="1690597609593" duration="4577000" />
       <workItem from="1690627398949" duration="217000" />
       <workItem from="1690629297980" duration="12222000" />
+      <workItem from="1690764232008" duration="3340000" />
+      <workItem from="1690791455024" duration="7129000" />
+      <workItem from="1690811116599" duration="3694000" />
+      <workItem from="1690816080553" duration="10369000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1686759154955</created>
@@ -371,7 +389,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690696603554</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ventas funcionando &quot;bien&quot;, falta comprobar la cantidad vendida y la factura">
+      <option name="closed" value="true" />
+      <created>1690703050311</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690703050311</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SOLO FALTAN COMENTARIOS">
+      <option name="closed" value="true" />
+      <created>1690799156055</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690799156056</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +433,9 @@
     <MESSAGE value="añadido puto rif" />
     <MESSAGE value="añadido stepper para venta" />
     <MESSAGE value="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Funcionando conexión con base de datos en muchos ficheros, faltan comentarios xd" />
+    <MESSAGE value="ventas funcionando &quot;bien&quot;, falta comprobar la cantidad vendida y la factura" />
+    <MESSAGE value="SOLO FALTAN COMENTARIOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="SOLO FALTAN COMENTARIOS" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

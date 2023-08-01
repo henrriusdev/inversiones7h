@@ -4,6 +4,7 @@ import com.helisha.inversiones7h.dao.IVentaRepo;
 import com.helisha.inversiones7h.entities.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class VentaService implements IVentaService{
   }
 
   @Override
+  @Transactional
   public List<Venta> findAll() {
     return (List<Venta>) repo.findAll();
   }

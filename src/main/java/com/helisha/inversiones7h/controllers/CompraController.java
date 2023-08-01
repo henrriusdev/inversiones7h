@@ -19,6 +19,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -157,6 +158,30 @@ public class CompraController implements BootInitializable {
     proveedor.clear();
     cantidadSpinner.setValue(0);
     monto.setText("");
+
+    mostrarAlertaExito("¡Exitoso!", "Compra registrada exitosamente");
+  }
+
+  private void mostrarAlertaError(String titulo, String header, String mensaje) {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle(titulo);
+    alert.setHeaderText(header);
+    alert.setContentText(mensaje);
+    alert.showAndWait();
+  }
+
+  private void mostrarAlertaExito(String titulo, String header) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(titulo);
+    alert.setHeaderText(header);
+    alert.showAndWait();
+  }
+  public void refrescarCampos() {
+    this.proveedor.getItems().removeAll(this.proveedor.getItems());
+    this.proveedor.getItems().setAll(proveedorService.findAll());
+    this.producto.getItems().removeAll(this.producto.getItems());
+    this.producto.getItems().setAll(productoService.findAll());
+
   }
 
 }

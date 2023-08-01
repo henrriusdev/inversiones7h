@@ -1,5 +1,6 @@
 package com.helisha.inversiones7h.controllers;
 
+// imports
 import com.helisha.inversiones7h.BootInitializable;
 import com.helisha.inversiones7h.MainApp;
 import fr.brouillard.oss.cssfx.CSSFX;
@@ -37,20 +38,25 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-@Component
-@FxmlView("Caja.fxml")
+@Component // denota que es un componente de spring boot
+@FxmlView("Caja.fxml") // denotamos vista
 public class CajaController implements BootInitializable {
+
+  // variables
   private Stage stage;
   private double xOffset;
   private double yOffset;
   private final ToggleGroup toggleGroup;
 
+  // Variables provenientes del archivo FXML
   @FXML
   private HBox windowHeader;
 
@@ -89,19 +95,20 @@ public class CajaController implements BootInitializable {
 
   private ToggleButton bienvenidaBtn;
 
-  @Autowired
+  @Autowired // inyeccion de dependencias
   private FxWeaver fxWeaver;
 
   private ApplicationContext applicationContext; // contexto de spring
 
-  public CajaController() {
+  public CajaController() { // definicion de variables
     this.toggleGroup = new ToggleGroup();
     ToggleButtonsUtil.addAlwaysOneSelectedSupport(toggleGroup);
   }
 
-  @Override
+  @Override // funcion que se ejecuta al inicializar el controlador
   public void initialize(URL location, ResourceBundle resources) {
-    closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit());
+    // eventos para los botones de la esquina superior derecha
+    closeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> Platform.exit()); //cerrar
     minimizeIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> ((Stage) rootPane.getScene().getWindow()).setIconified(true));
     alwaysOnTopIcon.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
       boolean newVal = !stage.isAlwaysOnTop();
@@ -109,20 +116,22 @@ public class CajaController implements BootInitializable {
       stage.setAlwaysOnTop(newVal);
     });
 
+    // eventos para la ventana completa
     windowHeader.setOnMousePressed(event -> {
       xOffset = stage.getX() - event.getScreenX();
       yOffset = stage.getY() - event.getScreenY();
     });
+
     windowHeader.setOnMouseDragged(event -> {
       stage.setX(event.getScreenX() + xOffset);
       stage.setY(event.getScreenY() + yOffset);
     });
 
-    initializeLoader();
+    initializeLoader(); // cargar opciones
 
     ScrollUtils.addSmoothScrolling(scrollPane);
 
-    // The only way to get a fucking smooth image in this shitty framework
+    // cargar logo
     Image image = new Image(MainApp.class.getResourceAsStream("logo_alt.png"), 64, 64, true, true);
     ImageView logo = new ImageView(image);
     Circle clip = new Circle(30);
@@ -133,12 +142,13 @@ public class CajaController implements BootInitializable {
   }
 
   private void initializeLoader() {
-    Parent ventaController = fxWeaver.loadView(VentaController.class); //cargamos vista
-    Parent clienteController = fxWeaver.loadView(ClienteController.class); //cargamos vista
+    // cargar las vistas de las opciones del menu
+    Parent ventaVista = fxWeaver.loadView(VentaController.class); //cargamos vista
+    Parent clienteVista = fxWeaver.loadView(ClienteController.class); //cargamos vista
     Parent bienvenidaCaja = fxWeaver.loadView(BienvenidaCajeroController.class);
-    Parent verCliente = fxWeaver.loadView(VerClienteController.class);
+    Parent verClienteVista = fxWeaver.loadView(VerClienteController.class);
 
-    // botones
+    // opciones del menu
     ToggleButton ventaBtn = createToggle("fas-shop", "Generar Venta");
     ToggleButton clienteBtn = createToggle("fas-user-group", "Agregar Cliente");
     bienvenidaBtn = createToggle("fas-shop", "Inicio");
@@ -146,12 +156,15 @@ public class CajaController implements BootInitializable {
 
     // eventos
     ventaBtn.setOnAction(event -> {
-      contentPane.getChildren().setAll(ventaController);
+      VentaController ventaController = applicationContext.getBean(VentaController.class); // obtenemos la clase cargada
+      ventaController.refrescarCampos();// recargamos tabla
+      ventaController.restablecer();
+      contentPane.getChildren().setAll(ventaVista);
       // cuando se haga click, mostraremos la vista de compra
     });
 
     clienteBtn.setOnAction(event -> {
-      contentPane.getChildren().setAll(clienteController);
+      contentPane.getChildren().setAll(clienteVista);
       // cuando se haga click, mostraremos la vista de productos
     });
 
@@ -161,9 +174,9 @@ public class CajaController implements BootInitializable {
     });
 
     verClienteBtn.setOnAction(event -> {
-      VerClienteController verClienteController = applicationContext.getBean(VerClienteController.class);
-      verClienteController.recargarTabla();
-      contentPane.getChildren().setAll(verCliente);
+      VerClienteController verClienteController = applicationContext.getBean(VerClienteController.class); // obtenemos la clase cargada
+      verClienteController.recargarTabla(); // recargamos tabla
+      contentPane.getChildren().setAll(verClienteVista);
       // cuando se haga click, mostraremos la vista de productos
     });
 
@@ -173,16 +186,14 @@ public class CajaController implements BootInitializable {
     navBar.getChildren().add(clienteBtn);
     navBar.getChildren().add(verClienteBtn);
 
-    contentPane.getChildren().setAll(bienvenidaCaja);
-
-
+    contentPane.getChildren().setAll(bienvenidaCaja); // por defecto se vera la bienvenida
   }
 
   private ToggleButton createToggle(String icon, String text) {
     return createToggle(icon, text, 0);
   }
 
-  private ToggleButton createToggle(String icon, String text, double rotate) {
+  private ToggleButton createToggle(String icon, String text, double rotate) { // funcion para crear la opcion para el menu
     MFXIconWrapper wrapper = new MFXIconWrapper(icon, 24, 32);
     MFXRectangleToggleNode toggleNode = new MFXRectangleToggleNode(text, wrapper);
     toggleNode.setAlignment(Pos.CENTER_LEFT);
@@ -217,12 +228,12 @@ public class CajaController implements BootInitializable {
   }
 
   @Override
-  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException { // contexto de la app
     this.applicationContext = applicationContext;
   }
 
   @FXML
-  public void volverAlInicio() {
+  public void volverAlInicio() { // accion para volver al inicio
     bienvenidaBtn.setSelected(true);
     Parent bienvenidaCaja = fxWeaver.loadView(BienvenidaCajeroController.class);
     contentPane.getChildren().setAll(bienvenidaCaja);
@@ -233,11 +244,11 @@ public class CajaController implements BootInitializable {
   }
 
   @FXML
-  public void cerrarSesion(ActionEvent event) {
-    Parent root = fxWeaver.loadView(LoginViewController.class);
+  public void cerrarSesion(ActionEvent event) { // accion para cerrar la sesion
+    Parent root = fxWeaver.loadView(LoginViewController.class); // cargamos vista
     Stage stage = new Stage();
-    stage.setTitle("Inicio de sesión - Inversiones7H");
-    LoginViewController loginViewController = applicationContext.getBean(LoginViewController.class);
+    stage.setTitle("Inicio de sesión - Inversiones7H"); // titulo
+    LoginViewController loginViewController = applicationContext.getBean(LoginViewController.class); // obtenemos la clase cargada
     loginViewController.setStage(stage);
 
     try {
@@ -253,7 +264,18 @@ public class CajaController implements BootInitializable {
       System.out.println(exception.getLocalizedMessage());
     }
 
+    // obtenemos la ventana actual y la cerramos
     Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     currentStage.close();
+
+    // restablecemos los campos de cada controller
+    VerClienteController verClienteController = applicationContext.getBean(VerClienteController.class);
+    verClienteController.restablecer();
+
+    ClienteController clienteController = applicationContext.getBean(ClienteController.class);
+    clienteController.restablecer();
+
+    VentaController ventaController = applicationContext.getBean(VentaController.class);
+    ventaController.restablecer();
   }
 }

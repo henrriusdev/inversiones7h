@@ -184,8 +184,29 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <MFXTextField fx:id="precio" layoutX="258.0" layoutY="222.0" prefHeight="49.0" prefWidth="175.0" />
+            <MFXTextField fx:id="precio" floatMode="DISABLED" layoutX="257.0" layoutY="225.0" prefHeight="43.0" prefWidth="175.0" />
             <MFXFilterComboBox fx:id="proveedorField" layoutX="257.0" layoutY="304.0" prefHeight="39.0" prefWidth="175.0" />
+            <Label layoutX="401.0" layoutY="233.0" text="  $">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.3137255012989044" green="0.16470588743686676" blue="0.5647059082984924" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6509804129600525" green="0.1411764770746231" blue="0.8784313797950745" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
          </children>
       </Pane>
    </children>

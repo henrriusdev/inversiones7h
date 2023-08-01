@@ -10,9 +10,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/Buttons.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.VerComprasController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/Buttons.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helisha.inversiones7h.controllers.VerVentasController">
    <children>
-      <Label layoutX="486.0" layoutY="24.0" text="Compras Efectuadas">
+      <Label layoutX="500.0" layoutY="38.0" text="Ventas Efectuadas">
          <font>
             <Font name="SansSerif Regular" size="33.0" />
          </font>
@@ -35,8 +35,8 @@
       </Label>
       <Pane layoutX="-1.0" layoutY="92.0" prefHeight="629.0" prefWidth="1280.0">
          <children>
-            <MFXPaginatedTableView fx:id="tablaCompras" layoutX="31.0" layoutY="34.0" prefHeight="516.0" prefWidth="1227.0" rowsPerPage="12" />
-            <MFXButton fx:id="generarReporte" layoutX="1129.0" layoutY="577.0" onAction="#generar" prefHeight="38.0" prefWidth="129.0" styleClass="outline-button" text="Descargar reporte" />
+            <MFXPaginatedTableView fx:id="tablaVentas" layoutX="31.0" layoutY="34.0" prefHeight="516.0" prefWidth="1227.0" rowsPerPage="10" />
+            <MFXButton fx:id="generarReporte" layoutX="1135.0" layoutY="577.0" onAction="#generar" prefHeight="38.0" prefWidth="130.0" styleClass="outline-button" text="Descargar reporte" />
          </children>
       </Pane>
    </children>

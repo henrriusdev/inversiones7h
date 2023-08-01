@@ -6,6 +6,7 @@ import com.helisha.inversiones7h.entities.Producto;
 import com.helisha.inversiones7h.entities.Venta;
 import com.helisha.inversiones7h.services.ClienteService;
 import com.helisha.inversiones7h.services.ProductoService;
+import com.helisha.inversiones7h.services.ReporteService;
 import com.helisha.inversiones7h.services.VentaService;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
@@ -17,22 +18,23 @@ import io.github.palexdev.materialfx.filter.BigDecimalFilter;
 import io.github.palexdev.materialfx.filter.LongFilter;
 import io.github.palexdev.materialfx.filter.StringFilter;
 import io.github.palexdev.materialfx.utils.others.FunctionalStringConverter;
-import io.github.palexdev.materialfx.validation.Constraint;
-import io.github.palexdev.materialfx.validation.MFXValidator;
-import io.github.palexdev.materialfx.validation.Validated;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -40,10 +42,8 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
@@ -61,9 +61,12 @@ public class VentaController implements BootInitializable {
   @Autowired
   private VentaService vService;
 
+  @Autowired
+  private ReporteService reporteService;
+
   private ApplicationContext applicationContext; // contexto de spring
 
-  private final MFXComboBox<Cliente> clienteCombo;
+  private final MFXFilterComboBox<Cliente> clienteCombo;
 
   private final MFXSpinner<Integer> cantidadSpinner;
 
@@ -71,11 +74,10 @@ public class VentaController implements BootInitializable {
 
   private final MFXPaginatedTableView<Producto> tablaProductos;
 
-  private MFXPaginatedTableView<Producto> tablaProductos2;
+  private final MFXPaginatedTableView<Producto> tablaProductos2;
 
-  private final MFXCheckbox checkbox;
 
-  private final MFXComboBox<Producto> productosCombo;
+  private final MFXFilterComboBox<Producto> productosCombo;
 
   private final MFXTextField montoTotal;
 
@@ -90,14 +92,13 @@ public class VentaController implements BootInitializable {
   private BigDecimal monto;
 
   public VentaController() {
-    clienteCombo = new MFXComboBox<>();
-    productosCombo = new MFXComboBox<>();
+    clienteCombo = new MFXFilterComboBox<>();
+    productosCombo = new MFXFilterComboBox<>();
     agregarProductoBtn = new MFXButton();
     tablaProductos = new MFXPaginatedTableView<>();
     tablaProductos2 = new MFXPaginatedTableView<>();
     cantidadSpinner = new MFXSpinner<>();
     montoTotal = new MFXTextField();
-    checkbox = new MFXCheckbox("Confirm Data?");
     productosVendidos = new ArrayList<>();
     monto = BigDecimal.valueOf(0);
   }
@@ -114,25 +115,26 @@ public class VentaController implements BootInitializable {
     StringConverter<Producto> productoConverter = FunctionalStringConverter.to(producto -> (producto == null) ? "" : "#" + producto.getCodigo() + " - " + producto.getNombre());
 
 
-    IntegerSpinnerModel model = new IntegerSpinnerModel(0);
+    IntegerSpinnerModel model = new IntegerSpinnerModel(1);
 
     clienteCombo.setConverter(clienteConverter);
     clienteCombo.setFloatingText("Seleccione el cliente");
     clienteCombo.setFloatMode(FloatMode.BORDER);
+    clienteCombo.setFloatingTextGap(3);
 
     productosCombo.setConverter(productoConverter);
     productosCombo.setFloatingText("Seleccione el producto a agregar");
     productosCombo.setFloatMode(FloatMode.BORDER);
+    productosCombo.setFloatingTextGap(3);
 
     productosCombo.valueProperty().addListener((obs, oldProducto, newProducto) -> {
       if (newProducto != null) {
-        newProducto.setCantidadVendida(cantidadSpinner.getValue().longValue());
-        model.setMax(newProducto.getCantidad().intValue() - (newProducto.getCantidadVendida() == 0 ? 0 : newProducto.getCantidadVendida().intValue()));
+        model.setMax(newProducto.getCantidad().intValue());
       }
     });
 
     cantidadSpinner.setSpinnerModel(model);
-    cantidadSpinner.setValue(0);
+    cantidadSpinner.setValue(1);
 
     agregarProductoBtn.setText("Agregar producto");
     agregarProductoBtn.setRippleColor(Color.DIMGRAY);
@@ -143,24 +145,29 @@ public class VentaController implements BootInitializable {
     agregarProductoBtn.setRippleRadiusMultiplier(2);
     agregarProductoBtn.setButtonType(ButtonType.RAISED);
     agregarProductoBtn.setDepthLevel(DepthLevel.LEVEL3);
-    agregarProductoBtn.setPadding(new Insets(10,10,10,10));
+    agregarProductoBtn.setPadding(new Insets(10, 10, 10, 10));
     agregarProductoBtn.setId("custom");
     agregarProductoBtn.setOnAction(event -> {
+      Long cantidad = cantidadSpinner.getValue().longValue();
       Producto producto = productosCombo.getValue();
-      producto.setCantidadVendida(cantidadSpinner.getValue().longValue());
+      producto.setCantidadVendida(cantidad);
 
       productosVendidos.add(producto);
       tablaProductos.setItems(FXCollections.observableArrayList(productosVendidos));
-      tablaProductos2.getItems().addAll(FXCollections.observableArrayList(productosVendidos));
+      tablaProductos2.setItems(FXCollections.observableArrayList(productosVendidos));
 
-      BigDecimal monto = productosVendidos.stream()
-        .map(Producto::getPrecio)
+      productosVendidos.forEach(producto1 -> System.out.println(producto1.getPrecio()));
+
+      monto = productosVendidos.stream()
+        .map(producto1 -> producto1.getPrecio().multiply(BigDecimal.valueOf(cantidad)))
         .reduce(BigDecimal.ZERO, BigDecimal::add);
 
       monto = monto.add(monto.multiply(BigDecimal.valueOf(0.16)));
       montoTotal.setText(monto.toString());
 
-      cantidadSpinner.setValue(0);
+      cantidadSpinner.setValue(1);
+
+      productosCombo.getItems().remove(producto);
     });
 
     montoTotal.setFloatingText("Monto total en $:");
@@ -178,7 +185,7 @@ public class VentaController implements BootInitializable {
 
   private List<MFXStepperToggle> createSteps() {
     MFXStepperToggle step1 = new MFXStepperToggle("Agregar Cliente", new MFXFontIcon("fas-user-group", 16, Color.web("#f1c40f")));
-    VBox step1Box = new VBox(20,clienteCombo);
+    VBox step1Box = new VBox(20, clienteCombo);
     step1Box.setAlignment(Pos.CENTER);
     step1.setContent(step1Box);
 
@@ -203,42 +210,8 @@ public class VentaController implements BootInitializable {
     MFXStepperToggle step3 = new MFXStepperToggle("Confirmación", new MFXFontIcon("fas-check", 16, Color.web("#85CB33")));
     Node step3Grid = createGrid();
     step3.setContent(step3Grid);
-    step3.getValidator().constraint("Los datos deben ser confirmados", checkbox.selectedProperty());
 
     return List.of(step1, step2, step3);
-  }
-
-  private <T extends Node & Validated> Node wrapNodeForValidation(T node) {
-    Label errorLabel = new Label();
-    errorLabel.getStyleClass().add("error-label");
-    errorLabel.setManaged(false);
-    stepper.addEventHandler(MFXStepper.MFXStepperEvent.VALIDATION_FAILED_EVENT, event -> {
-      MFXValidator validator = node.getValidator();
-      List<Constraint> validate = validator.validate();
-      if (!validate.isEmpty()) {
-        errorLabel.setText(validate.get(0).getMessage());
-      }
-    });
-    stepper.addEventHandler(MFXStepper.MFXStepperEvent.NEXT_EVENT, event -> errorLabel.setText(""));
-    VBox wrap = new VBox(3, node, errorLabel) {
-      @Override
-      protected void layoutChildren() {
-        super.layoutChildren();
-
-        double x = node.getBoundsInParent().getMinX();
-        double y = node.getBoundsInParent().getMaxY() + getSpacing();
-        double width = getWidth();
-        double height = errorLabel.prefHeight(-1);
-        errorLabel.resizeRelocate(x, y, width, height);
-      }
-
-      @Override
-      protected double computePrefHeight(double width) {
-        return super.computePrefHeight(width) + errorLabel.getHeight() + getSpacing();
-      }
-    };
-    wrap.setAlignment(Pos.CENTER);
-    return wrap;
   }
 
   private Node createGrid() {
@@ -263,8 +236,6 @@ public class VentaController implements BootInitializable {
 
     HBox b1 = new HBox(clienteLabel1, clienteLabel2);
 
-    tablaProductos2.getItems().addAll(FXCollections.observableArrayList(productosVendidos));
-
     configurarTabla(tablaProductos2);
 
     tablaProductos2.setPrefWidth(599);
@@ -279,15 +250,16 @@ public class VentaController implements BootInitializable {
     b2.setMaxWidth(Region.USE_PREF_SIZE);
     b3.setMaxWidth(Region.USE_PREF_SIZE);
 
-    VBox box = new VBox(10, b1, b2, b3, checkbox);
+    VBox box = new VBox(10, b1, b2, b3);
     box.setAlignment(Pos.CENTER);
 
     StackPane.setAlignment(box, Pos.CENTER);
 
     stepper.setOnLastNext(event -> {
       Venta venta = new Venta();
-
-      venta.setCliente(clienteCombo.getValue());
+      Cliente cliente = clienteCombo.getValue();
+      cliente.setGastoTotal(monto);
+      venta.setCliente(cliente);
       productosVendidos = productosVendidos.stream().map(producto -> {
           Producto productoActualizado = new Producto();
           productoActualizado.setCodigo(producto.getCodigo());
@@ -299,30 +271,41 @@ public class VentaController implements BootInitializable {
           return productoActualizado;
         })
         .collect(Collectors.toList());
+
       venta.setProductos(productosVendidos);
       venta.setMontoTotal(monto);
 
       vService.save(venta);
+      cService.save(cliente);
+      productosVendidos.forEach(producto -> pService.save(producto));
+
+      try {
+        generar(productosVendidos);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
 
       box.getChildren().setAll(completedLabel);
       stepper.setMouseTransparent(true);
     });
     stepper.setOnBeforePrevious(event -> {
       if (stepper.isLastToggle()) {
-        checkbox.setSelected(false);
-        box.getChildren().setAll(b1, b2, b3, checkbox);
+        box.getChildren().setAll(b1, b2, b3);
       }
     });
 
     return box;
   }
 
-  public void refrescarCampos(){
+  public void refrescarCampos() {
+    // eliminamos y recargamos los items del combobox
+    clienteCombo.getItems().removeAll(clienteCombo.getItems());
+    productosCombo.getItems().removeAll(productosCombo.getItems());
     clienteCombo.getItems().addAll(cService.findAll());
-    productosCombo.getItems().addAll(pService.findDisponibles());
+    productosCombo.getItems().addAll(pService.findAll());
   }
 
-  private MFXTextField createLabel(String text) {
+  private MFXTextField createLabel(String text) { // funcion para crear un Label
     MFXTextField label = MFXTextField.asLabel(text);
     label.setAlignment(Pos.CENTER_LEFT);
     label.setPrefWidth(200);
@@ -331,7 +314,7 @@ public class VentaController implements BootInitializable {
     return label;
   }
 
-  private void configurarTabla(MFXPaginatedTableView<Producto> tabla){
+  private void configurarTabla(MFXPaginatedTableView<Producto> tabla) {
     MFXTableColumn<Producto> columnaProductos = new MFXTableColumn<>("Código", false, Comparator.comparing(Producto::getCodigo));
     MFXTableColumn<Producto> columnaNombre = new MFXTableColumn<>("Nombre", false, Comparator.comparing(Producto::getNombre));
     MFXTableColumn<Producto> columnaProveedor = new MFXTableColumn<>("Proveedor", false, Comparator.comparing(Producto::getProveedor));
@@ -344,14 +327,50 @@ public class VentaController implements BootInitializable {
     columnaPrecio.setRowCellFactory(producto -> new MFXTableRowCell<>(Producto::getPrecioString));
     columnaCantidad.setRowCellFactory(producto -> new MFXTableRowCell<>(Producto::getCantidadVendida));
 
-    tabla.getTableColumns().setAll(columnaProductos,columnaNombre,columnaProveedor,columnaCantidad, columnaPrecio);
+    tabla.getTableColumns().setAll(columnaProductos, columnaNombre, columnaProveedor, columnaCantidad, columnaPrecio);
     tabla.getFilters().setAll(
-      new StringFilter<>("Código",Producto::getCodigo),
+      new StringFilter<>("Código", Producto::getCodigo),
       new StringFilter<>("Nombre", Producto::getNombre),
       new BigDecimalFilter<>("Precio", Producto::getPrecio),
       new LongFilter<>("Cantidad vendida", Producto::getCantidadVendida),
       new StringFilter<>("Proveedor", Producto::getProveedor)
     );
+  }
+
+  public void restablecer() {
+    montoTotal.clear();
+    clienteCombo.clear();
+    productosCombo.clear();
+    productosCombo.getItems().removeAll();
+    clienteCombo.getItems().removeAll();
+    productosVendidos.clear();
+    monto = BigDecimal.valueOf(0);
+    tablaProductos.getItems().removeAll();
+    tablaProductos2.getItems().removeAll();
+    cantidadSpinner.setValue(1);
+  }
+
+  public void generar(List<Producto> productos) throws Exception {
+    try {
+      JasperPrint jasperPrint = reporteService.generarFactura(productos, monto);
+
+      Date fechaActual = new Date();
+
+      // Formatear la fecha como un string
+      SimpleDateFormat formatoFecha = new SimpleDateFormat("ddMMyyyy_HHmmss");
+      String fechaFormateada = formatoFecha.format(fechaActual);
+
+      // Generar el nombre del archivo
+      String nombreArchivo = "factura-" + fechaFormateada + ".pdf";
+
+      // Ruta completa donde quieres guardar el archivo
+      String pdfPath = System.getProperty("user.dir") + "\\inversiones-data\\" + nombreArchivo; // path where you want to save your pdf...
+      JasperExportManager.exportReportToPdfFile(jasperPrint, pdfPath);
+      Runtime.getRuntime().exec("cmd /c start chrome file:///" + pdfPath);
+    } catch (Exception e) {
+      throw e;
+    }
+
   }
 
   @Override
